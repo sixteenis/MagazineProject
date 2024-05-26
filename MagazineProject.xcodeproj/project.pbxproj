@@ -16,6 +16,9 @@
 		065A52F62C036E990002EB7E /* MagazineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52F52C036E990002EB7E /* MagazineTableViewController.swift */; };
 		065A52F82C036EB80002EB7E /* MagazineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52F72C036EB80002EB7E /* MagazineTableViewCell.swift */; };
 		065A52FA2C0379490002EB7E /* MagazineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52F92C0379490002EB7E /* MagazineInfo.swift */; };
+		065A52FC2C0387470002EB7E /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52FB2C0387460002EB7E /* Restaurant.swift */; };
+		065A52FE2C038FAB0002EB7E /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52FD2C038FAB0002EB7E /* RestaurantTableViewCell.swift */; };
+		065A53002C038FB90002EB7E /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52FF2C038FB90002EB7E /* RestaurantTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		065A52F52C036E990002EB7E /* MagazineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineTableViewController.swift; sourceTree = "<group>"; };
 		065A52F72C036EB80002EB7E /* MagazineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineTableViewCell.swift; sourceTree = "<group>"; };
 		065A52F92C0379490002EB7E /* MagazineInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagazineInfo.swift; sourceTree = "<group>"; };
+		065A52FB2C0387460002EB7E /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		065A52FD2C038FAB0002EB7E /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		065A52FF2C038FB90002EB7E /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,9 @@
 				065A52F52C036E990002EB7E /* MagazineTableViewController.swift */,
 				065A52F72C036EB80002EB7E /* MagazineTableViewCell.swift */,
 				065A52F92C0379490002EB7E /* MagazineInfo.swift */,
+				065A52FB2C0387460002EB7E /* Restaurant.swift */,
+				065A52FD2C038FAB0002EB7E /* RestaurantTableViewCell.swift */,
+				065A52FF2C038FB90002EB7E /* RestaurantTableViewController.swift */,
 			);
 			path = MagazineProject;
 			sourceTree = "<group>";
@@ -154,8 +163,11 @@
 			files = (
 				065A52F62C036E990002EB7E /* MagazineTableViewController.swift in Sources */,
 				065A52F82C036EB80002EB7E /* MagazineTableViewCell.swift in Sources */,
+				065A52FC2C0387470002EB7E /* Restaurant.swift in Sources */,
 				065A52DD2C00A3310002EB7E /* AppDelegate.swift in Sources */,
 				065A52DF2C00A3310002EB7E /* SceneDelegate.swift in Sources */,
+				065A52FE2C038FAB0002EB7E /* RestaurantTableViewCell.swift in Sources */,
+				065A53002C038FB90002EB7E /* RestaurantTableViewController.swift in Sources */,
 				065A52FA2C0379490002EB7E /* MagazineInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
