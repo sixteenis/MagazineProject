@@ -20,7 +20,7 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
-        tableView.rowHeight = 200
+        tableView.rowHeight = 160
 
     }
     func setView() {
@@ -29,6 +29,7 @@ class RestaurantTableViewController: UITableViewController {
         searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         
         buttonSet(button: button1, title: "한식")
+        button1.titleLabel?.textAlignment = .center
         buttonSet(button: button2, title: "일식")
         buttonSet(button: button3, title: "그외")
         
@@ -69,7 +70,7 @@ class RestaurantTableViewController: UITableViewController {
         cell.mainImage.layer.cornerRadius = 10
         cell.mainImage.contentMode = .scaleAspectFill
         
-        cell.mainLabel.text = "\(data.name) \n가격: \(data.price)원"
+        cell.mainLabel.text = "\(data.name) \n가격: \(data.price.formatted())원"
         cell.mainLabel.textColor = .black
         cell.mainLabel.textAlignment = .left
         cell.mainLabel.numberOfLines = 0
