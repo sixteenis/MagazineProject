@@ -17,7 +17,7 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
-        tableView.rowHeight = 600
+        tableView.rowHeight = 200
 
     }
     func setView() {
@@ -53,24 +53,25 @@ class RestaurantTableViewController: UITableViewController {
         
         cell.mainImage.kf.setImage(with: url)
         cell.mainImage.layer.cornerRadius = 10
+        cell.mainImage.contentMode = .scaleAspectFill
         
-        cell.mainLabel.text = "이름: \(data.name) 가격: \(data.price)원"
+        cell.mainLabel.text = "\(data.name) \n가격: \(data.price)원"
         cell.mainLabel.textColor = .black
         cell.mainLabel.textAlignment = .left
-        cell.mainLabel.numberOfLines = 2
-        cell.mainLabel.font = .boldSystemFont(ofSize: 18)
+        cell.mainLabel.numberOfLines = 0
+        cell.mainLabel.font = .boldSystemFont(ofSize: 14)
 
         cell.subLabel1.text = "주소: \(data.address)"
         cell.subLabel1.textColor = .black
         cell.subLabel1.textAlignment = .left
-        cell.subLabel1.numberOfLines = 1
-        cell.subLabel1.font = .systemFont(ofSize: 14)
+        cell.subLabel1.numberOfLines = 0
+        cell.subLabel1.font = .systemFont(ofSize: 12)
         
         cell.subLabel2.text = "전화번호: \(data.phoneNumber)"
         cell.subLabel2.textColor = .black
         cell.subLabel2.textAlignment = .left
-        cell.subLabel2.numberOfLines = 1
-        cell.subLabel2.font = .systemFont(ofSize: 14)
+        cell.subLabel2.numberOfLines = 0
+        cell.subLabel2.font = .systemFont(ofSize: 12)
 
         return cell
         
