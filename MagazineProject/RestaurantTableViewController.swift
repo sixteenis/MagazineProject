@@ -39,6 +39,7 @@ class RestaurantTableViewController: UITableViewController {
         button2.tag = 1
         button3.tag = 2
         button4.tag = 3
+        searchButton.tag = 4
         
         filterArr = restaurantArr
         
@@ -90,7 +91,9 @@ class RestaurantTableViewController: UITableViewController {
         
     }
 
-
+    @IBAction func textFieldEndDid(_ sender: UITextField) {
+    }
+    
     @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender.tag{
         case 0:
@@ -105,7 +108,14 @@ class RestaurantTableViewController: UITableViewController {
         case 3:
             filterArr = restaurantArr
             tableView.reloadData()
-            
+        case 4:
+            filterArr = []
+            for item in restaurantArr{
+                if item.name.contains(searchTextField.text!){
+                    filterArr.append(item)
+                }
+            }
+            tableView.reloadData()
         default:
             print("오류")
             
