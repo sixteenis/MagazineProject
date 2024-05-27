@@ -68,7 +68,8 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @objc func loveTappend(_ sender: UIButton) {
         travelArr[sender.tag].like?.toggle()
         filterdArr = travelArr
-        travelTableView.reloadData()
+        
+        travelTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
         
         
     }
