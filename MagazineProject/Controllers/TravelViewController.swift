@@ -17,6 +17,8 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     private var filterdArr = [Travel]()
     private var likeBool = false
     
+    var tagCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +33,7 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
         travelTableView.register(adXib, forCellReuseIdentifier: "AdTableViewCell")
         filterdArr = travelArr
         
+        
 
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,15 +42,27 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = filterdArr[indexPath.row]
-        
+        print(indexPath.row)
+        print(filterdArr.count)
+        print("------")
         if data.ad! {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell") as! AdTableViewCell
             cell.setData(data: data)
+            cell.tag = tagCount
+            tagCount += 1
+            if tagCount == filterdArr.count - 1{
+                tagCount = 0
+            }
             return cell
             
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TravelTableViewCell") as! TravelTableViewCell
             cell.setData(data: data)
+            cell.tag = tagCount
+            tagCount += 1
+            if tagCount == filterdArr.count - 1{
+                tagCount = 0
+            }
             return cell
         }
     }
