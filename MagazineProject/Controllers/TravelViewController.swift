@@ -7,15 +7,15 @@
 
 import UIKit
 
-class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TravelViewController: UIViewController, UITableViewDelegate {
     @IBOutlet var headLabel: UILabel!
     @IBOutlet var lineLabel: UILabel!
     @IBOutlet var travelTableView: UITableView!
     @IBOutlet var loveFilterButton: UIButton!
     
-    private var travelArr = TravelInfo().travel
-    private var filterdArr = [Travel]()
-    private var likeBool = false
+    fileprivate var travelArr = TravelInfo().travel
+    fileprivate var filterdArr = [Travel]()
+    fileprivate var likeBool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,27 +34,7 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
 
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filterdArr.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let data = filterdArr[indexPath.row]
-        if data.ad! {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell") as! AdTableViewCell
-            cell.setData(data: data)
-            
-            return cell
-            
-        }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TravelTableViewCell") as! TravelTableViewCell
-            cell.setData(data: data)
-            cell.loveButton.addTarget(self, action: #selector(loveTappend), for: .touchUpInside)
-            cell.loveButton.tag = indexPath.row
-            
-            return cell
-        }
-    }
     func setView() {
         headLabel.headSet(title: "도시 상세 정보")
         
@@ -100,4 +80,30 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
 
+}
+
+
+extension TravelViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filterdArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = filterdArr[indexPath.row]
+        if data.ad! {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell") as! AdTableViewCell
+            cell.setData(data: data)
+            
+            return cell
+            
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TravelTableViewCell") as! TravelTableViewCell
+            cell.setData(data: data)
+            cell.loveButton.addTarget(self, action: #selector(loveTappend), for: .touchUpInside)
+            cell.loveButton.tag = indexPath.row
+            
+            return cell
+        }
+    }
 }
