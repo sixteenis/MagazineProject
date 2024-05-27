@@ -13,7 +13,10 @@ class RestaurantTableViewController: UITableViewController {
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
+    @IBOutlet var button4: UIButton!
+    
     let restaurantArr = RestaurantList().restaurantArray
+    var filterArr = [Restaurant]()
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -29,6 +32,16 @@ class RestaurantTableViewController: UITableViewController {
         buttonSet(button: button2, title: "일식")
         buttonSet(button: button3, title: "그외")
         
+        buttonSet(button: button4, title: "")
+        button4.setImage(UIImage(systemName: "goforward"), for: .normal)
+        
+        button1.tag = 0
+        button2.tag = 1
+        button3.tag = 2
+        button4.tag = 3
+        
+        filterArr = restaurantArr
+        
         
     }
     func buttonSet(button: UIButton, title: String) {
@@ -43,12 +56,12 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantArr.count
+        return filterArr.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell", for: indexPath) as! RestaurantTableViewCell
-        let data = restaurantArr[indexPath.row]
+        let data = filterArr[indexPath.row]
         let url = URL(string: data.image)
         
         cell.mainImage.kf.setImage(with: url)
@@ -78,5 +91,25 @@ class RestaurantTableViewController: UITableViewController {
     }
 
 
-
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        switch sender.tag{
+        case 0:
+            filterArr = restaurantArr.filter{$0.category == "한식"}
+            tableView.reloadData()
+        case 1:
+            filterArr = restaurantArr.filter{$0.category == "일식"}
+            tableView.reloadData()
+        case 2:
+            filterArr = restaurantArr.filter{$0.category != "한식" && $0.category != "일식"}
+            tableView.reloadData()
+        case 3:
+            filterArr = restaurantArr
+            tableView.reloadData()
+            
+        default:
+            print("오류")
+            
+        }
+    }
+    
 }

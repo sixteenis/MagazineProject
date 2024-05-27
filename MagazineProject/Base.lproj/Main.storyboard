@@ -160,6 +160,9 @@
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="한식"/>
+                                    <connections>
+                                        <action selector="buttonTapped:" destination="lSc-ZD-dJn" eventType="touchUpInside" id="ZVV-QG-7iH"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlA-cQ-WGl">
                                     <rect key="frame" x="84" y="47" width="60" height="35"/>
@@ -169,6 +172,9 @@
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="세글자"/>
+                                    <connections>
+                                        <action selector="buttonTapped:" destination="lSc-ZD-dJn" eventType="touchUpInside" id="Mtw-xx-nNc"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6v0-gP-7MG">
                                     <rect key="frame" x="152" y="47" width="60" height="35"/>
@@ -178,6 +184,9 @@
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="buttonTapped:" destination="lSc-ZD-dJn" eventType="touchUpInside" id="sSM-Xl-4p4"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfg-gg-1xi">
                                     <rect key="frame" x="343" y="8" width="34" height="34"/>
@@ -187,15 +196,29 @@
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsZ-n4-Coc">
+                                    <rect key="frame" x="228" y="47" width="35" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="qYR-Fb-lRN"/>
+                                        <constraint firstAttribute="width" constant="35" id="tfs-dk-eEe"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="buttonTapped:" destination="lSc-ZD-dJn" eventType="touchUpInside" id="fm9-XY-fab"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
+                                <constraint firstItem="LsZ-n4-Coc" firstAttribute="top" secondItem="mfm-Wh-lNt" secondAttribute="bottom" constant="5" id="0da-yc-EDe"/>
                                 <constraint firstItem="mfm-Wh-lNt" firstAttribute="leading" secondItem="hDg-o5-EVH" secondAttribute="leading" constant="16" id="3nN-WW-Vck"/>
                                 <constraint firstItem="DlA-cQ-WGl" firstAttribute="leading" secondItem="5uv-4i-Aaw" secondAttribute="trailing" constant="8" id="KBD-lC-yqn"/>
                                 <constraint firstAttribute="bottom" secondItem="6v0-gP-7MG" secondAttribute="bottom" constant="8" id="QzT-cZ-vIZ"/>
                                 <constraint firstAttribute="trailing" secondItem="gfg-gg-1xi" secondAttribute="trailing" constant="16" id="RWS-a9-2a1"/>
                                 <constraint firstItem="6v0-gP-7MG" firstAttribute="leading" secondItem="DlA-cQ-WGl" secondAttribute="trailing" constant="8" id="Y4B-Vj-A9d"/>
                                 <constraint firstItem="gfg-gg-1xi" firstAttribute="leading" secondItem="mfm-Wh-lNt" secondAttribute="trailing" id="exq-UK-vkZ"/>
+                                <constraint firstItem="LsZ-n4-Coc" firstAttribute="leading" secondItem="6v0-gP-7MG" secondAttribute="trailing" constant="16" id="l6J-YS-yF8"/>
                                 <constraint firstItem="mfm-Wh-lNt" firstAttribute="top" secondItem="hDg-o5-EVH" secondAttribute="top" constant="8" id="lMR-7i-TXW"/>
                                 <constraint firstItem="gfg-gg-1xi" firstAttribute="top" secondItem="hDg-o5-EVH" secondAttribute="top" constant="8" id="nic-Ip-A1K"/>
                                 <constraint firstAttribute="bottom" secondItem="5uv-4i-Aaw" secondAttribute="bottom" constant="8" id="rfR-6M-OWP"/>
@@ -285,6 +308,7 @@
                         <outlet property="button1" destination="5uv-4i-Aaw" id="1Pv-aj-6VV"/>
                         <outlet property="button2" destination="DlA-cQ-WGl" id="Wsb-ZS-JJk"/>
                         <outlet property="button3" destination="6v0-gP-7MG" id="cFi-pc-Rzi"/>
+                        <outlet property="button4" destination="LsZ-n4-Coc" id="wOr-Z8-lYZ"/>
                         <outlet property="searchButton" destination="gfg-gg-1xi" id="aRS-nP-qeo"/>
                         <outlet property="searchTextField" destination="mfm-Wh-lNt" id="1MB-LH-buj"/>
                     </connections>
