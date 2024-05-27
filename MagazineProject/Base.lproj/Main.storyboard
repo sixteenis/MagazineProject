@@ -195,6 +195,7 @@
                     <connections>
                         <outlet property="headLabel" destination="Avc-Xh-uYM" id="3X8-A3-ftt"/>
                         <outlet property="lineLabel" destination="lpe-xL-aj9" id="wOT-5G-wzS"/>
+                        <outlet property="loveFilterButton" destination="1OR-zI-Mz9" id="eMj-dN-zgO"/>
                         <outlet property="travelTableView" destination="ZCT-lB-yLr" id="J3x-Gj-uTE"/>
                     </connections>
                 </viewController>

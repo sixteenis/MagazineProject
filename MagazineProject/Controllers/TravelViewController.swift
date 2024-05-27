@@ -11,9 +11,11 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet var headLabel: UILabel!
     @IBOutlet var lineLabel: UILabel!
     @IBOutlet var travelTableView: UITableView!
+    @IBOutlet var loveFilterButton: UIButton!
     
     private let travelArr = TravelInfo().travel
     private var filterdArr = [Travel]()
+    private var likeBool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,9 +55,38 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
         headLabel.headSet(title: "도시 상세 정보")
         
         lineLabel.lineSet()
+        
+        loveFilterButton.setTitle("", for: .normal)
+        loveFilterButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        loveFilterButton.tintColor = .red
+        loveFilterButton.addTarget(self, action: #selector(loveButtonTapped), for: .touchUpInside)
     }
     
-    
+    @objc func loveButtonTapped() {
+        likeBool.toggle()
+        if likeBool{
+            filterdArr = travelArr.filter{ l in
+            if let a = l.like {
+                if a{
+                    return true
+                }else{
+                    return false
+                }
+            }else{
+                return true
+            }
+            
+            
+        }
+        loveFilterButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        travelTableView.reloadData()
+        }else{
+        
+            filterdArr = travelArr
+            travelTableView.reloadData()
+            loveFilterButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
+    }
 
 
 }
