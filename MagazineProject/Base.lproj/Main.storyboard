@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -129,13 +130,79 @@
                     <connections>
                         <segue destination="pHd-HV-Dd9" kind="relationship" relationship="viewControllers" id="gjY-JM-l7f"/>
                         <segue destination="lSc-ZD-dJn" kind="relationship" relationship="viewControllers" id="LqH-ks-fq6"/>
+                        <segue destination="lUd-Zw-GDC" kind="relationship" relationship="viewControllers" id="WPf-q4-10Z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFT-u9-BWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1270.9923664122136" y="-51.408450704225352"/>
         </scene>
-        <!--Item-->
+        <!--도시정보-->
+        <scene sceneID="ex1-tw-Ju7">
+            <objects>
+                <viewController id="lUd-Zw-GDC" customClass="TravelViewController" customModule="MagazineProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cPK-iR-aEd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avc-Xh-uYM">
+                                <rect key="frame" x="16" y="59" width="361" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="bUp-vB-Q5O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpe-xL-aj9">
+                                <rect key="frame" x="0.0" y="91" width="393" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="q1i-80-Tuv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZCT-lB-yLr">
+                                <rect key="frame" x="16" y="108" width="361" height="645"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1OR-zI-Mz9">
+                                <rect key="frame" x="333" y="58.666666666666657" width="44" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="0"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rw7-y7-AyB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rw7-y7-AyB" firstAttribute="trailing" secondItem="1OR-zI-Mz9" secondAttribute="trailing" constant="16" id="2iF-GM-h5t"/>
+                            <constraint firstItem="Rw7-y7-AyB" firstAttribute="bottom" secondItem="ZCT-lB-yLr" secondAttribute="bottom" constant="16" id="Bvo-Xw-KF5"/>
+                            <constraint firstItem="lpe-xL-aj9" firstAttribute="leading" secondItem="Rw7-y7-AyB" secondAttribute="leading" id="KPK-cg-H4c"/>
+                            <constraint firstItem="Rw7-y7-AyB" firstAttribute="trailing" secondItem="ZCT-lB-yLr" secondAttribute="trailing" constant="16" id="Z6H-r7-COE"/>
+                            <constraint firstItem="Avc-Xh-uYM" firstAttribute="top" secondItem="Rw7-y7-AyB" secondAttribute="top" id="gWg-6Q-csF"/>
+                            <constraint firstItem="1OR-zI-Mz9" firstAttribute="leading" secondItem="Rw7-y7-AyB" secondAttribute="leading" constant="333" id="h2u-6N-iSD"/>
+                            <constraint firstItem="Avc-Xh-uYM" firstAttribute="leading" secondItem="Rw7-y7-AyB" secondAttribute="leading" constant="16" id="hQg-NH-3Ls"/>
+                            <constraint firstItem="Rw7-y7-AyB" firstAttribute="trailing" secondItem="lpe-xL-aj9" secondAttribute="trailing" id="hY5-Og-Q2p"/>
+                            <constraint firstItem="ZCT-lB-yLr" firstAttribute="top" secondItem="lpe-xL-aj9" secondAttribute="bottom" constant="16" id="jub-Mk-uNV"/>
+                            <constraint firstItem="lpe-xL-aj9" firstAttribute="top" secondItem="Avc-Xh-uYM" secondAttribute="bottom" constant="8" id="nB8-et-rmL"/>
+                            <constraint firstItem="1OR-zI-Mz9" firstAttribute="top" secondItem="cPK-iR-aEd" secondAttribute="top" constant="58.670000000000002" id="rJw-4D-wcX"/>
+                            <constraint firstItem="Rw7-y7-AyB" firstAttribute="trailing" secondItem="Avc-Xh-uYM" secondAttribute="trailing" constant="16" id="wz3-La-zdA"/>
+                            <constraint firstItem="ZCT-lB-yLr" firstAttribute="leading" secondItem="Rw7-y7-AyB" secondAttribute="leading" constant="16" id="xA0-h0-xfW"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="도시정보" id="uwQ-vf-bdw"/>
+                    <connections>
+                        <outlet property="headLabel" destination="Avc-Xh-uYM" id="3X8-A3-ftt"/>
+                        <outlet property="lineLabel" destination="lpe-xL-aj9" id="wOT-5G-wzS"/>
+                        <outlet property="travelTableView" destination="ZCT-lB-yLr" id="J3x-Gj-uTE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OUb-Ti-6Tp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1345.8015267175572" y="786.61971830985919"/>
+        </scene>
+        <!--식당 검색-->
         <scene sceneID="6qF-fh-qxU">
             <objects>
                 <tableViewController id="lSc-ZD-dJn" customClass="RestaurantTableViewController" customModule="MagazineProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -253,13 +320,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hiA-wg-l6p">
                                                     <rect key="frame" x="166" y="0.0" width="195" height="150"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iW-ub-lRV">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iW-ub-lRV">
                                                             <rect key="frame" x="0.0" y="0.0" width="195" height="101.33333333333333"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6b-1h-Hdc">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6b-1h-Hdc">
                                                             <rect key="frame" x="0.0" y="105.33333333333333" width="195" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -302,7 +369,7 @@
                             <outlet property="delegate" destination="lSc-ZD-dJn" id="J55-fX-cWN"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="EH6-ry-8GA"/>
+                    <tabBarItem key="tabBarItem" title="식당 검색" id="EH6-ry-8GA"/>
                     <navigationItem key="navigationItem" id="A7j-4n-hsa"/>
                     <connections>
                         <outlet property="button1" destination="5uv-4i-Aaw" id="1Pv-aj-6VV"/>
