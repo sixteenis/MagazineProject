@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygr-pm-pZF">
-                        <rect key="frame" x="288" y="2" width="30" height="30"/>
+                        <rect key="frame" x="285" y="5" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="KfO-kr-PUO"/>
                             <constraint firstAttribute="width" constant="30" id="lFb-wQ-9aX"/>
@@ -37,8 +37,8 @@
                 <constraints>
                     <constraint firstItem="1sg-g7-XeY" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Fj0-6S-UJD"/>
                     <constraint firstItem="1sg-g7-XeY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="alL-Bh-bJ2"/>
-                    <constraint firstAttribute="trailing" secondItem="Ygr-pm-pZF" secondAttribute="trailing" constant="2" id="eg1-CF-NKD"/>
-                    <constraint firstItem="Ygr-pm-pZF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="kLR-zc-LcV"/>
+                    <constraint firstAttribute="trailing" secondItem="Ygr-pm-pZF" secondAttribute="trailing" constant="5" id="eg1-CF-NKD"/>
+                    <constraint firstItem="Ygr-pm-pZF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="kLR-zc-LcV"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

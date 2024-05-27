@@ -26,8 +26,10 @@ class TravelTableViewCell: UITableViewCell {
     @IBOutlet var starAndSaveLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setCell()
     }
+    
+    
     func setCell(){
         mainLabel.textAlignment = .left
         mainLabel.textColor = .black
@@ -63,7 +65,6 @@ class TravelTableViewCell: UITableViewCell {
     }
     func setData(data: Travel) {
         mainLabel.text = data.title
-        
         subLabel.text = data.description
         
         if let url = URL(string: data.travel_image!){
@@ -71,15 +72,18 @@ class TravelTableViewCell: UITableViewCell {
         }else{
             mainImageVIew.image = UIImage(systemName: "photo.fill")
         }
-        let loveImage = data.like! ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
-        loveButton.setImage(loveImage, for: .normal)
         
-        starAndSaveLabel.text = "(\(data.grade!)) " + "저장 \(data.save!.formatted())"
+        let loveImage = data.like! ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
+        
         let num = Int(data.grade! + 0.5)
         let star = [star1,star2,star3,star4,star5]
         for i in 0..<num {
             star[i]!.image = UIImage(systemName: "star.fill")
         }
+        loveButton.setImage(loveImage, for: .normal)
+        
+        starAndSaveLabel.text = "(\(data.grade!)) " + "저장 \(data.save!.formatted())"
+        
         
     }
     

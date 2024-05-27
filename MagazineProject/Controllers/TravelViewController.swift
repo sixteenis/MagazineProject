@@ -40,12 +40,11 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         if data.ad! {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell") as! AdTableViewCell
-            
+            cell.setData(data: data)
             return cell
             
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TravelTableViewCell") as! TravelTableViewCell
-            cell.setCell()
             cell.setData(data: data)
             return cell
         }
