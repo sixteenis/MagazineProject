@@ -11,8 +11,9 @@ struct Travel {
     let travel_image: String?
     let grade: Double?
     let save: Int?
-    let like: Bool?
+    var like: Bool?
     let ad: Bool?
+    let uuid = UUID()
 }
 
 struct TravelInfo {

@@ -58,7 +58,7 @@ class TravelTableViewCell: UITableViewCell {
         setStar(star: star4)
         setStar(star: star5)
     
-        loveButton.addTarget(self, action: #selector(loveTappend), for: .touchUpInside)
+        //loveButton.addTarget(self, action: #selector(loveTappend), for: .touchUpInside)
             
         
         
@@ -89,14 +89,10 @@ class TravelTableViewCell: UITableViewCell {
         starAndSaveLabel.text = "(\(data.grade!)) " + "저장 \(data.save!.formatted())"
         
         loveButton.tag = tagCount
-        tagCount += 1
+
         
         
     }
-    @objc func loveTappend(_ sender: UIButton) {
-        print(#function)
-        print(sender.tag)
-        
-    }
+    
     
 }

@@ -13,11 +13,9 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet var travelTableView: UITableView!
     @IBOutlet var loveFilterButton: UIButton!
     
-    private let travelArr = TravelInfo().travel
+    private var travelArr = TravelInfo().travel
     private var filterdArr = [Travel]()
     private var likeBool = false
-    
-    var tagCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,27 +40,18 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = filterdArr[indexPath.row]
-        print(indexPath.row)
-        print(filterdArr.count)
-        print("------")
         if data.ad! {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell") as! AdTableViewCell
             cell.setData(data: data)
-            cell.tag = tagCount
-            tagCount += 1
-            if tagCount == filterdArr.count - 1{
-                tagCount = 0
-            }
+            
             return cell
             
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TravelTableViewCell") as! TravelTableViewCell
             cell.setData(data: data)
-            cell.tag = tagCount
-            tagCount += 1
-            if tagCount == filterdArr.count - 1{
-                tagCount = 0
-            }
+            cell.loveButton.addTarget(self, action: #selector(loveTappend), for: .touchUpInside)
+            cell.loveButton.tag = indexPath.row
+            
             return cell
         }
     }
@@ -76,7 +65,13 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
         loveFilterButton.tintColor = .red
         loveFilterButton.addTarget(self, action: #selector(loveButtonTapped), for: .touchUpInside)
     }
-    
+    @objc func loveTappend(_ sender: UIButton) {
+        travelArr[sender.tag].like?.toggle()
+        filterdArr = travelArr
+        travelTableView.reloadData()
+        
+        
+    }
     @objc func loveButtonTapped() {
         likeBool.toggle()
         if likeBool{
