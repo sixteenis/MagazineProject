@@ -17,6 +17,7 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setView()
         travelTableView.rowHeight = 120
         travelTableView.delegate = self
@@ -44,6 +45,8 @@ class TravelViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TravelTableViewCell") as! TravelTableViewCell
+            cell.setCell()
+            cell.setData(data: data)
             return cell
         }
     }
