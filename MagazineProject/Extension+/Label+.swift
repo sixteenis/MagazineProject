@@ -22,8 +22,8 @@ extension UILabel{
     func restaurantLabelSet(fontsize: Int) {
         textColor = .black
         textAlignment = .left
-        //numberOfLines = 0
-        //font = .systemFont(ofSize: CGFloat(fontsize))
+        numberOfLines = 0
+        font = .systemFont(ofSize: CGFloat(fontsize))
         //CGFloat
     }
     func restaurantLabelDataSet(_ title: String) {

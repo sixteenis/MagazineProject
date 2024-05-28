@@ -25,7 +25,7 @@ class TravelTableViewCell: UITableViewCell {
     
     @IBOutlet var starAndSaveLabel: UILabel!
     
-    var tagCount = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setCell()
@@ -57,9 +57,6 @@ class TravelTableViewCell: UITableViewCell {
         setStar(star: star3)
         setStar(star: star4)
         setStar(star: star5)
-    
-        //loveButton.addTarget(self, action: #selector(loveTappend), for: .touchUpInside)
-            
         
         
     }
@@ -76,7 +73,6 @@ class TravelTableViewCell: UITableViewCell {
         }else{
             mainImageVIew.image = UIImage(systemName: "photo.fill")
         }
-        
         let loveImage = data.like! ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         
         let num = Int(data.grade! + 0.5)
@@ -84,11 +80,11 @@ class TravelTableViewCell: UITableViewCell {
         for i in 0..<num {
             star[i]!.image = UIImage(systemName: "star.fill")
         }
+        
         loveButton.setImage(loveImage, for: .normal)
         
         starAndSaveLabel.text = "(\(data.grade!)) " + "저장 \(data.save!.formatted())"
         
-        loveButton.tag = tagCount
 
         
         

@@ -7,20 +7,20 @@
 
 import UIKit
 
-class TravelViewController: UIViewController, UITableViewDelegate {
+class TravelViewController: UIViewController {
     @IBOutlet var headLabel: UILabel!
     @IBOutlet var lineLabel: UILabel!
     @IBOutlet var travelTableView: UITableView!
     @IBOutlet var loveFilterButton: UIButton!
     
-    fileprivate var travelArr = TravelInfo().travel
-    fileprivate var filterdArr = [Travel]()
-    fileprivate var likeBool = false
+    private var travelArr = TravelInfo().travel
+    private var filterdArr = [Travel]()
+    private var likeBool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setView()
+        
         travelTableView.rowHeight = 120
         travelTableView.delegate = self
         travelTableView.dataSource = self
@@ -45,38 +45,39 @@ class TravelViewController: UIViewController, UITableViewDelegate {
         loveFilterButton.tintColor = .red
         loveFilterButton.addTarget(self, action: #selector(loveButtonTapped), for: .touchUpInside)
     }
-    @objc func loveTappend(_ sender: UIButton) {
-        travelArr[sender.tag].like?.toggle()
-        filterdArr = travelArr
-        
-        travelTableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .fade)
-        
-        
+    
+    @objc func loveTappend(_ sender: UIButton) { //한 셀의 하트모양 클릭
+        for i in 0..<travelArr.count{
+            if travelArr[i].id == sender.tag{
+                travelArr[i].like?.toggle()
+                print(travelArr[i].id)
+                break
+            }   
+            
+        }
+        if likeBool{
+            filterdArr = travelArr.filter{
+                guard let like = $0.like else { return true}
+                 return like ? true : false
+            }
+        }else{
+            filterdArr = travelArr
+        }
+        travelTableView.reloadData()
     }
-    @objc func loveButtonTapped() {
+    
+    @objc func loveButtonTapped() { //하트모양을 통해 필터 하는 기능
         likeBool.toggle()
         if likeBool{
-            filterdArr = travelArr.filter{ l in
-            if let a = l.like {
-                if a{
-                    return true
-                }else{
-                    return false
-                }
-            }else{
-                return true
+            filterdArr = travelArr.filter{
+                guard let like = $0.like else { return true}
+                 return like ? true : false
             }
-            
-            
-        }
-        loveFilterButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        travelTableView.reloadData()
         }else{
-        
             filterdArr = travelArr
-            travelTableView.reloadData()
-            loveFilterButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
+        likeBool ? loveFilterButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : loveFilterButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        travelTableView.reloadData()
     }
 
 
@@ -101,9 +102,13 @@ extension TravelViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "TravelTableViewCell") as! TravelTableViewCell
             cell.setData(data: data)
             cell.loveButton.addTarget(self, action: #selector(loveTappend), for: .touchUpInside)
-            cell.loveButton.tag = indexPath.row
+            cell.loveButton.tag = data.id
+            print(cell.loveButton.tag)
             
             return cell
         }
     }
+}
+extension TravelViewController: UITableViewDelegate {
+    
 }

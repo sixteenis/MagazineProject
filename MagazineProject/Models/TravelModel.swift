@@ -13,7 +13,23 @@ struct Travel {
     let save: Int?
     var like: Bool?
     let ad: Bool?
-    let uuid = UUID()
+    let id = UUID().hashValue
+    //흠냥...
+    //tag의 단위가
+    //꿀팁...
+//    init(title: String, description: String?, travel_image: String?, grade: Double?, save: Int?, like: Bool? = nil, ad: Bool?, id: Int) {
+//        self.title = title
+//        self.description = description
+//        self.travel_image = travel_image
+//        self.grade = grade
+//        self.save = save
+//        self.like = like
+//        self.ad = ad
+//        self.id = id
+//    }
+    
+    
+    
 }
 
 struct TravelInfo {
