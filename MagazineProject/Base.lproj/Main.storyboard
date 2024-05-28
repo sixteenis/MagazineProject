@@ -216,18 +216,19 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mfm-Wh-lNt">
-                                    <rect key="frame" x="16" y="8" width="327" height="34"/>
+                                    <rect key="frame" x="16" y="8" width="327" height="39"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
+                                        <action selector="searchTextFiledEnd:" destination="lSc-ZD-dJn" eventType="editingDidEnd" id="ugb-eP-d84"/>
                                         <action selector="textFieldEndDid:" destination="lSc-ZD-dJn" eventType="editingDidEndOnExit" id="96Q-A3-XWV"/>
                                     </connections>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uv-4i-Aaw">
-                                    <rect key="frame" x="16" y="47" width="60" height="35"/>
+                                    <rect key="frame" x="16" y="51" width="60" height="35"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="60" id="Vh6-9g-sbn"/>
-                                        <constraint firstAttribute="height" constant="35" id="arz-fm-2Ul"/>
+                                        <constraint firstAttribute="height" constant="35" id="ULA-Tk-cAT"/>
+                                        <constraint firstAttribute="width" constant="60" id="cVs-uw-UbT"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="한식"/>
@@ -236,10 +237,10 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlA-cQ-WGl">
-                                    <rect key="frame" x="84" y="47" width="60" height="35"/>
+                                    <rect key="frame" x="80" y="51" width="60" height="35"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="2ZM-xv-muV"/>
-                                        <constraint firstAttribute="width" constant="60" id="CvM-u6-4e9"/>
+                                        <constraint firstAttribute="height" constant="35" id="PVD-Tu-N7I"/>
+                                        <constraint firstAttribute="width" constant="60" id="ZMs-3q-wgg"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="세글자"/>
@@ -248,10 +249,10 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6v0-gP-7MG">
-                                    <rect key="frame" x="152" y="47" width="60" height="35"/>
+                                    <rect key="frame" x="144" y="51" width="60" height="35"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="efH-In-g0G"/>
-                                        <constraint firstAttribute="width" constant="60" id="fgQ-n6-6tb"/>
+                                        <constraint firstAttribute="width" constant="60" id="a8s-x6-qLC"/>
+                                        <constraint firstAttribute="height" constant="35" id="sbs-wA-bng"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="Button"/>
@@ -267,14 +268,14 @@
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <connections>
-                                        <action selector="buttonTapped:" destination="lSc-ZD-dJn" eventType="touchUpInside" id="ZaK-gW-wnI"/>
+                                        <action selector="searchButtonTapped:" destination="lSc-ZD-dJn" eventType="touchUpInside" id="Jcs-E4-brd"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsZ-n4-Coc">
-                                    <rect key="frame" x="228" y="47" width="35" height="35"/>
+                                    <rect key="frame" x="208" y="51" width="60" height="35"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="qYR-Fb-lRN"/>
-                                        <constraint firstAttribute="width" constant="35" id="tfs-dk-eEe"/>
+                                        <constraint firstAttribute="width" constant="60" id="NLx-12-kth"/>
+                                        <constraint firstAttribute="height" constant="35" id="wPX-6c-8IG"/>
                                     </constraints>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="Button"/>
@@ -282,29 +283,48 @@
                                         <action selector="buttonTapped:" destination="lSc-ZD-dJn" eventType="touchUpInside" id="fm9-XY-fab"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIH-Yb-6a2">
+                                    <rect key="frame" x="272" y="51" width="60" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="MOo-69-Q4e"/>
+                                        <constraint firstAttribute="width" constant="60" id="S1j-CZ-GvY"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="buttonTapped:" destination="lSc-ZD-dJn" eventType="touchUpInside" id="Ltg-AS-AKX"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="LsZ-n4-Coc" firstAttribute="top" secondItem="mfm-Wh-lNt" secondAttribute="bottom" constant="5" id="0da-yc-EDe"/>
                                 <constraint firstItem="mfm-Wh-lNt" firstAttribute="leading" secondItem="hDg-o5-EVH" secondAttribute="leading" constant="16" id="3nN-WW-Vck"/>
-                                <constraint firstItem="DlA-cQ-WGl" firstAttribute="leading" secondItem="5uv-4i-Aaw" secondAttribute="trailing" constant="8" id="KBD-lC-yqn"/>
-                                <constraint firstAttribute="bottom" secondItem="6v0-gP-7MG" secondAttribute="bottom" constant="8" id="QzT-cZ-vIZ"/>
+                                <constraint firstItem="LsZ-n4-Coc" firstAttribute="leading" secondItem="6v0-gP-7MG" secondAttribute="trailing" constant="4" id="FiR-Rj-Ahf"/>
+                                <constraint firstAttribute="bottom" secondItem="6v0-gP-7MG" secondAttribute="bottom" constant="4" id="INc-lt-rdd"/>
+                                <constraint firstItem="DlA-cQ-WGl" firstAttribute="top" secondItem="mfm-Wh-lNt" secondAttribute="bottom" constant="4" id="Mbi-b3-nHD"/>
+                                <constraint firstItem="DlA-cQ-WGl" firstAttribute="leading" secondItem="5uv-4i-Aaw" secondAttribute="trailing" constant="4" id="Nap-jw-wub"/>
+                                <constraint firstAttribute="bottom" secondItem="yIH-Yb-6a2" secondAttribute="bottom" constant="4" id="NyQ-Bv-fZL"/>
+                                <constraint firstAttribute="bottom" secondItem="LsZ-n4-Coc" secondAttribute="bottom" constant="4" id="R7C-9G-JBa"/>
                                 <constraint firstAttribute="trailing" secondItem="gfg-gg-1xi" secondAttribute="trailing" constant="16" id="RWS-a9-2a1"/>
-                                <constraint firstItem="6v0-gP-7MG" firstAttribute="leading" secondItem="DlA-cQ-WGl" secondAttribute="trailing" constant="8" id="Y4B-Vj-A9d"/>
+                                <constraint firstItem="yIH-Yb-6a2" firstAttribute="top" secondItem="mfm-Wh-lNt" secondAttribute="bottom" constant="4" id="WoN-oe-frY"/>
+                                <constraint firstItem="6v0-gP-7MG" firstAttribute="leading" secondItem="DlA-cQ-WGl" secondAttribute="trailing" constant="4" id="XlR-VG-t0T"/>
+                                <constraint firstItem="yIH-Yb-6a2" firstAttribute="leading" secondItem="LsZ-n4-Coc" secondAttribute="trailing" constant="4" id="cbL-RC-xut"/>
+                                <constraint firstAttribute="bottom" secondItem="5uv-4i-Aaw" secondAttribute="bottom" constant="4" id="d4r-u3-vPH"/>
                                 <constraint firstItem="gfg-gg-1xi" firstAttribute="leading" secondItem="mfm-Wh-lNt" secondAttribute="trailing" id="exq-UK-vkZ"/>
-                                <constraint firstItem="LsZ-n4-Coc" firstAttribute="leading" secondItem="6v0-gP-7MG" secondAttribute="trailing" constant="16" id="l6J-YS-yF8"/>
                                 <constraint firstItem="mfm-Wh-lNt" firstAttribute="top" secondItem="hDg-o5-EVH" secondAttribute="top" constant="8" id="lMR-7i-TXW"/>
+                                <constraint firstAttribute="bottom" secondItem="DlA-cQ-WGl" secondAttribute="bottom" constant="4" id="nb6-1E-mPA"/>
                                 <constraint firstItem="gfg-gg-1xi" firstAttribute="top" secondItem="hDg-o5-EVH" secondAttribute="top" constant="8" id="nic-Ip-A1K"/>
-                                <constraint firstAttribute="bottom" secondItem="5uv-4i-Aaw" secondAttribute="bottom" constant="8" id="rfR-6M-OWP"/>
-                                <constraint firstAttribute="bottom" secondItem="DlA-cQ-WGl" secondAttribute="bottom" constant="8" id="s2M-g9-c92"/>
-                                <constraint firstItem="5uv-4i-Aaw" firstAttribute="leading" secondItem="hDg-o5-EVH" secondAttribute="leading" constant="16" id="u8u-Qe-oFx"/>
+                                <constraint firstItem="LsZ-n4-Coc" firstAttribute="top" secondItem="mfm-Wh-lNt" secondAttribute="bottom" constant="4" id="pb6-4P-5Rm"/>
+                                <constraint firstItem="5uv-4i-Aaw" firstAttribute="leading" secondItem="hDg-o5-EVH" secondAttribute="leading" constant="16" id="qCT-I5-Bbt"/>
+                                <constraint firstItem="6v0-gP-7MG" firstAttribute="top" secondItem="mfm-Wh-lNt" secondAttribute="bottom" constant="4" id="wI4-2X-vCH"/>
+                                <constraint firstItem="5uv-4i-Aaw" firstAttribute="top" secondItem="mfm-Wh-lNt" secondAttribute="bottom" constant="4" id="zSp-7q-0es"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantTableViewCell" rowHeight="182" id="m1W-2w-vrx" customClass="RestaurantTableViewCell" customModule="MagazineProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="140" width="393" height="182"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1W-2w-vrx" id="spA-2w-bKe" customClass="RestaurantTableViewCell" customModule="MagazineProject" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m1W-2w-vrx" id="spA-2w-bKe">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="182"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -373,12 +393,13 @@
                     <tabBarItem key="tabBarItem" title="식당 검색" id="EH6-ry-8GA"/>
                     <navigationItem key="navigationItem" id="A7j-4n-hsa"/>
                     <connections>
-                        <outlet property="button1" destination="5uv-4i-Aaw" id="1Pv-aj-6VV"/>
-                        <outlet property="button2" destination="DlA-cQ-WGl" id="Wsb-ZS-JJk"/>
-                        <outlet property="button3" destination="6v0-gP-7MG" id="cFi-pc-Rzi"/>
-                        <outlet property="button4" destination="LsZ-n4-Coc" id="wOr-Z8-lYZ"/>
                         <outlet property="searchButton" destination="gfg-gg-1xi" id="aRS-nP-qeo"/>
                         <outlet property="searchTextField" destination="mfm-Wh-lNt" id="1MB-LH-buj"/>
+                        <outletCollection property="subButtonArr" destination="5uv-4i-Aaw" collectionClass="NSMutableArray" id="xdt-fN-h1c"/>
+                        <outletCollection property="subButtonArr" destination="DlA-cQ-WGl" collectionClass="NSMutableArray" id="qbY-Ng-bQt"/>
+                        <outletCollection property="subButtonArr" destination="6v0-gP-7MG" collectionClass="NSMutableArray" id="154-V9-bM5"/>
+                        <outletCollection property="subButtonArr" destination="LsZ-n4-Coc" collectionClass="NSMutableArray" id="82T-ic-9gv"/>
+                        <outletCollection property="subButtonArr" destination="yIH-Yb-6a2" collectionClass="NSMutableArray" id="tCf-WM-D0S"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUu-qy-37v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

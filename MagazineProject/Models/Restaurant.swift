@@ -18,6 +18,24 @@ struct Restaurant {
     let category: String
     let price: Int
     let type: Int
+    
+    var mainLabelText: String {
+        let returnStr = "\(name) \n가격: \(price.formatted())원"
+        return returnStr
+    }
+    var addressLabelText: String {
+        let returnStr = "주소: \(address)"
+        return returnStr
+    }
+    var phoneNumLabelText: String {
+        let returnStr = "전화번호: \(phoneNumber)"
+        
+        return returnStr
+    }
+    var imageURL: URL? {
+        let url = URL(string: self.image)
+        return url
+    }
 }
 
 struct RestaurantList {
