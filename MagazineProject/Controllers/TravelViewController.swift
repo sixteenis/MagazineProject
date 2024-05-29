@@ -8,10 +8,8 @@
 import UIKit
 
 class TravelViewController: UIViewController {
-    @IBOutlet var headLabel: UILabel!
     @IBOutlet var lineLabel: UILabel!
     @IBOutlet var travelTableView: UITableView!
-    @IBOutlet var loveFilterButton: UIButton!
     
     private var travelArr = TravelInfo().travel
     private var filterdArr = [Travel]()
@@ -20,10 +18,12 @@ class TravelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        setupNavigationItemButton(likeBool)
         
         travelTableView.rowHeight = 120
         travelTableView.delegate = self
         travelTableView.dataSource = self
+        
         
         let travelXib = UINib(nibName: "TravelTableViewCell", bundle: nil)
         let adXib = UINib(nibName: "AdTableViewCell", bundle: nil)
@@ -36,17 +36,24 @@ class TravelViewController: UIViewController {
     }
     
     func setView() {
-        headLabel.headSet(title: "도시 상세 정보")
-        
+        //headLabel.headSet(title: "도시 상세 정보")
+        self.navigationItem.title = "도시 상세 정보"
         lineLabel.lineSet()
         
-        loveFilterButton.setTitle("", for: .normal)
-        loveFilterButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        loveFilterButton.tintColor = .red
-        loveFilterButton.addTarget(self, action: #selector(loveButtonTapped), for: .touchUpInside)
+//        loveFilterButton.setTitle("", for: .normal)
+//        loveFilterButton.setImage(UIImage(systemName: "heart"), for: .normal)
+//        loveFilterButton.tintColor = .red
+//        loveFilterButton.addTarget(self, action: #selector(loveButtonTapped), for: .touchUpInside)
+    }
+    func setupNavigationItemButton(_ loveBool: Bool) {
+        let setupImage = loveBool ? "heart.fill" : "heart"
+        self.navigationItem.setRightBarButton(UIBarButtonItem(image: UIImage(systemName: setupImage), style: .plain, target: self, action: #selector(loveButtonTapped)), animated: true)
+            
+        navigationItem.rightBarButtonItem?.tintColor = .red
     }
     
-    @objc func loveTappend(_ sender: UIButton) { //한 셀의 하트모양 클릭
+    // MARK: - 한 셀의 하트모양 클릭한 경우
+    @objc func loveTappend(_ sender: UIButton) {
         for i in 0..<travelArr.count{
             if travelArr[i].id == sender.tag{
                 travelArr[i].like?.toggle()
@@ -65,8 +72,9 @@ class TravelViewController: UIViewController {
         }
         travelTableView.reloadData()
     }
-    
-    @objc func loveButtonTapped() { //하트모양을 통해 필터 하는 기능
+    // MARK: - 상단 하트모양으로 필터기능
+    @objc func loveButtonTapped() {
+        print(#function)
         likeBool.toggle()
         if likeBool{
             filterdArr = travelArr.filter{
@@ -76,7 +84,7 @@ class TravelViewController: UIViewController {
         }else{
             filterdArr = travelArr
         }
-        likeBool ? loveFilterButton.setImage(UIImage(systemName: "heart.fill"), for: .normal) : loveFilterButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        setupNavigationItemButton(likeBool)
         travelTableView.reloadData()
     }
 
