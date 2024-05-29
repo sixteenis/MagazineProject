@@ -131,6 +131,7 @@
                         <segue destination="pHd-HV-Dd9" kind="relationship" relationship="viewControllers" id="gjY-JM-l7f"/>
                         <segue destination="lSc-ZD-dJn" kind="relationship" relationship="viewControllers" id="LqH-ks-fq6"/>
                         <segue destination="ih1-4i-2jr" kind="relationship" relationship="viewControllers" id="WPf-q4-10Z"/>
+                        <segue destination="Yi0-Ln-uXu" kind="relationship" relationship="viewControllers" id="MAE-BC-uco"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFT-u9-BWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -475,6 +476,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sir-32-IxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2272.5190839694656" y="786.61971830985919"/>
+        </scene>
+        <!--인기 도시-->
+        <scene sceneID="bPq-o0-vZw">
+            <objects>
+                <viewController storyboardIdentifier="CityViewController" id="0s8-7A-ywk" customClass="CityViewController" customModule="MagazineProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HTx-vj-hSn">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2ma-bC-qgY">
+                                <rect key="frame" x="50" y="111" width="293" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                </segments>
+                                <connections>
+                                    <action selector="citySegmentButtonTapped:" destination="0s8-7A-ywk" eventType="valueChanged" id="uXH-sT-CU4"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uFw-uQ-rPk">
+                                <rect key="frame" x="8" y="158" width="377" height="611"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fff-1s-G4Q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2ma-bC-qgY" firstAttribute="leading" secondItem="fff-1s-G4Q" secondAttribute="leading" constant="50" id="2hc-sh-sJ2"/>
+                            <constraint firstItem="2ma-bC-qgY" firstAttribute="top" secondItem="fff-1s-G4Q" secondAttribute="top" constant="8" id="3eY-C6-6Gs"/>
+                            <constraint firstItem="uFw-uQ-rPk" firstAttribute="top" secondItem="2ma-bC-qgY" secondAttribute="bottom" constant="16" id="Pfi-1h-PBb"/>
+                            <constraint firstItem="fff-1s-G4Q" firstAttribute="bottom" secondItem="uFw-uQ-rPk" secondAttribute="bottom" id="SZN-kI-RwM"/>
+                            <constraint firstItem="fff-1s-G4Q" firstAttribute="trailing" secondItem="uFw-uQ-rPk" secondAttribute="trailing" constant="8" id="dpX-C3-DOK"/>
+                            <constraint firstItem="2ma-bC-qgY" firstAttribute="centerX" secondItem="HTx-vj-hSn" secondAttribute="centerX" id="fZc-2K-BA3"/>
+                            <constraint firstItem="uFw-uQ-rPk" firstAttribute="leading" secondItem="fff-1s-G4Q" secondAttribute="leading" constant="8" id="fqO-yk-yPy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="인기 도시" id="8FO-ej-54D"/>
+                    <connections>
+                        <outlet property="citySegment" destination="2ma-bC-qgY" id="HDa-Tk-nDl"/>
+                        <outlet property="cityTabelView" destination="uFw-uQ-rPk" id="9fX-0z-BSa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aqF-Vr-bso" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3199.2366412213737" y="1451.4084507042255"/>
+        </scene>
+        <!--인기도시-->
+        <scene sceneID="coV-cE-Lne">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yi0-Ln-uXu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="인기도시" id="30E-Qc-AnB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yix-Xo-ZDP">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0s8-7A-ywk" kind="relationship" relationship="rootViewController" id="p0f-u7-wX8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4SV-ob-MmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2272.5190839694656" y="1451.4084507042255"/>
         </scene>
     </scenes>
     <resources>

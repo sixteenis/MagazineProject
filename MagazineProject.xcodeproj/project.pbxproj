@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		062C37972C0757A200B7701A /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062C37962C0757A200B7701A /* CityViewController.swift */; };
+		062C37992C0757DD00B7701A /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062C37982C0757DD00B7701A /* CityInfo.swift */; };
+		062C379E2C075A0700B7701A /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062C379C2C075A0700B7701A /* CityTableViewCell.swift */; };
+		062C379F2C075A0700B7701A /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 062C379D2C075A0700B7701A /* CityTableViewCell.xib */; };
 		065A52DD2C00A3310002EB7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52DC2C00A3310002EB7E /* AppDelegate.swift */; };
 		065A52DF2C00A3310002EB7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52DE2C00A3310002EB7E /* SceneDelegate.swift */; };
 		065A52E42C00A3310002EB7E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 065A52E32C00A3310002EB7E /* Base */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		062C37962C0757A200B7701A /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		062C37982C0757DD00B7701A /* CityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
+		062C379C2C075A0700B7701A /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		062C379D2C075A0700B7701A /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		065A52D92C00A3310002EB7E /* MagazineProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagazineProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		065A52DC2C00A3310002EB7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065A52DE2C00A3310002EB7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,12 +92,12 @@
 		065A52DB2C00A3310002EB7E /* MagazineProject */ = {
 			isa = PBXGroup;
 			children = (
+				065A52E22C00A3310002EB7E /* Main.storyboard */,
 				066EB3102C0464770039F959 /* Extension+ */,
 				066EB30A2C0462710039F959 /* Models */,
 				066EB30D2C0462ED0039F959 /* Controllers */,
 				066EB3132C0466260039F959 /* Cells */,
 				065A52DE2C00A3310002EB7E /* SceneDelegate.swift */,
-				065A52E22C00A3310002EB7E /* Main.storyboard */,
 				065A52E72C00A3320002EB7E /* LaunchScreen.storyboard */,
 				065A52E52C00A3320002EB7E /* Assets.xcassets */,
 				065A52EA2C00A3320002EB7E /* Info.plist */,
@@ -104,6 +112,7 @@
 				065A52F92C0379490002EB7E /* MagazineInfo.swift */,
 				065A52FB2C0387460002EB7E /* Restaurant.swift */,
 				066EB30B2C04628F0039F959 /* TravelModel.swift */,
+				062C37982C0757DD00B7701A /* CityInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -115,6 +124,7 @@
 				065A52FF2C038FB90002EB7E /* RestaurantTableViewController.swift */,
 				066EB30E2C0464300039F959 /* TravelViewController.swift */,
 				0663B5B62C07092E001AAE86 /* DetailTravelViewController.swift */,
+				062C37962C0757A200B7701A /* CityViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -134,8 +144,10 @@
 				065A52FD2C038FAB0002EB7E /* RestaurantTableViewCell.swift */,
 				066EB3142C0466600039F959 /* TravelTableViewCell.swift */,
 				066EB3182C0466730039F959 /* AdTableViewCell.swift */,
+				062C379C2C075A0700B7701A /* CityTableViewCell.swift */,
 				066EB3152C0466600039F959 /* TravelTableViewCell.xib */,
 				066EB3192C0466730039F959 /* AdTableViewCell.xib */,
+				062C379D2C075A0700B7701A /* CityTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -208,6 +220,7 @@
 				065A52E62C00A3320002EB7E /* Assets.xcassets in Resources */,
 				066EB3162C0466600039F959 /* TravelTableViewCell.xib in Resources */,
 				065A52E92C00A3320002EB7E /* Base in Resources */,
+				062C379F2C075A0700B7701A /* CityTableViewCell.xib in Resources */,
 				065A52E42C00A3310002EB7E /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +234,7 @@
 			files = (
 				066EB3122C0464A40039F959 /* Label+.swift in Sources */,
 				066EB3172C0466600039F959 /* TravelTableViewCell.swift in Sources */,
+				062C379E2C075A0700B7701A /* CityTableViewCell.swift in Sources */,
 				065A52F62C036E990002EB7E /* MagazineTableViewController.swift in Sources */,
 				065A52F82C036EB80002EB7E /* MagazineTableViewCell.swift in Sources */,
 				065A52FC2C0387470002EB7E /* Restaurant.swift in Sources */,
@@ -230,8 +244,10 @@
 				0663B5B72C07092E001AAE86 /* DetailTravelViewController.swift in Sources */,
 				065A52DF2C00A3310002EB7E /* SceneDelegate.swift in Sources */,
 				066EB31B2C0466730039F959 /* AdTableViewCell.swift in Sources */,
+				062C37972C0757A200B7701A /* CityViewController.swift in Sources */,
 				065A52FE2C038FAB0002EB7E /* RestaurantTableViewCell.swift in Sources */,
 				065A53002C038FB90002EB7E /* RestaurantTableViewController.swift in Sources */,
+				062C37992C0757DD00B7701A /* CityInfo.swift in Sources */,
 				065A52FA2C0379490002EB7E /* MagazineInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
