@@ -18,7 +18,7 @@ class TravelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
-        setupNavigationItemButton()
+        setupNavigationItemButton(likeBool)
         
         travelTableView.rowHeight = 120
         travelTableView.delegate = self
@@ -38,13 +38,12 @@ class TravelViewController: UIViewController {
     func setView() {
         self.navigationItem.title = "도시 상세 정보"
         lineLabel.lineSet()
+        
+
     }
     func setupNavigationItemButton(_ loveBool: Bool) {
         let setupImage = loveBool ? "heart.fill" : "heart"
         self.navigationItem.setRightBarButton(UIBarButtonItem(image: UIImage(systemName: setupImage), style: .plain, target: self, action: #selector(loveButtonTapped)), animated: true)
-    }
-    func setupNavigationItemButton() {
-        self.navigationItem.setRightBarButton(UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(loveButtonTapped)), animated: true)
             
         navigationItem.rightBarButtonItem?.tintColor = .red
     }
@@ -56,7 +55,7 @@ class TravelViewController: UIViewController {
                 travelArr[i].like?.toggle()
                 print(travelArr[i].id)
                 break
-            }   
+            }
             
         }
         if likeBool{
