@@ -30,12 +30,8 @@ class DetailTravelViewController: UIViewController {
             
         }else{
             //lessthan
-            
-            self.navigationItem.setLeftBarButton(UIBarButtonItem(image: UIImage(systemName: "lessthan"), style: .plain, target: self, action: #selector(popButtonTapped)), animated: true)
             self.navigationItem.leftBarButtonItem?.tintColor = .black
-                
-//                UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(popButtonTapped)), animated: true)
-            
+            self.navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(popButtonTapped)), animated: true)
             self.navigationItem.title = model.title
             
             travelTitle.text = model.description
