@@ -36,14 +36,10 @@ class TravelViewController: UIViewController {
     }
     
     func setView() {
-        //headLabel.headSet(title: "도시 상세 정보")
         self.navigationItem.title = "도시 상세 정보"
         lineLabel.lineSet()
         
-//        loveFilterButton.setTitle("", for: .normal)
-//        loveFilterButton.setImage(UIImage(systemName: "heart"), for: .normal)
-//        loveFilterButton.tintColor = .red
-//        loveFilterButton.addTarget(self, action: #selector(loveButtonTapped), for: .touchUpInside)
+
     }
     func setupNavigationItemButton(_ loveBool: Bool) {
         let setupImage = loveBool ? "heart.fill" : "heart"
@@ -122,7 +118,6 @@ extension TravelViewController: UITableViewDelegate {
         let data = filterdArr[indexPath.row]
         if data.ad {
             let vc = storyboard?.instantiateViewController(withIdentifier: "DetailTravelViewController") as! DetailTravelViewController
-            //let nav = UINavigationController(rootViewController: vc)
             vc.model = data
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
