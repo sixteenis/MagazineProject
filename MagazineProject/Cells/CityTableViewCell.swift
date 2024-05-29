@@ -10,6 +10,7 @@ import UIKit
 class CityTableViewCell: UITableViewCell {
 
     
+    @IBOutlet var shadowImage: UIImageView!
     @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var subLabel: UILabel!
@@ -30,18 +31,26 @@ class CityTableViewCell: UITableViewCell {
 //        backgroundImage.layer.shadowRadius = 5
 //        backgroundImage.layer.shadowColor = UIColor.gray.cgColor
 //        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        //let outerView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+//        shadowImage.clipsToBounds = false
+//        shadowImage.layer.shadowColor = UIColor.black.cgColor
+//        shadowImage.layer.shadowOpacity = 1
+//        shadowImage.layer.shadowOffset = CGSize.zero
+//        shadowImage.layer.shadowRadius = 10
+//        shadowImage.layer.shadowPath = UIBezierPath(roundedRect: shadowImage.bounds, cornerRadius: 10).cgPath
+    
         backgroundImage.layer.cornerRadius = 20
         backgroundImage.layer.masksToBounds = true
         backgroundImage.clipsToBounds = true
         backgroundImage.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMinYCorner]
         backgroundImage.contentMode = .scaleAspectFill
         
-//        
-//        backgroundImage.layer.shadowOffset = CGSize(width: 5, height: 5)
-//        backgroundImage.layer.shadowOpacity = 0.7
-//        backgroundImage.layer.shadowRadius = 5
-//        backgroundImage.layer.shadowColor = UIColor.gray.cgColor
-//        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
+        
+//        shadowImage.layer.shadowOffset = CGSize(width: 50, height: 50)
+//        shadowImage.layer.shadowOpacity = 0.7
+//        //shadowImage.layer.shadowRadius = 5
+//        //shadowImage.layer.shadowColor = UIColor..cgColor
+//        shadowImage.translatesAutoresizingMaskIntoConstraints = false
     
         mainLabel.font = .boldSystemFont(ofSize: 20)
         mainLabel.textColor = .white
@@ -50,7 +59,8 @@ class CityTableViewCell: UITableViewCell {
         subLabel.font = .systemFont(ofSize: 14)
         subLabel.textColor = .white
         subLabel.textAlignment = .left
-        subLabel.backgroundColor = .systemGray3
+        subLabel.backgroundColor = .black
+        subLabel.layer.opacity = 0.7
     }
 
     func setupCellData(data: City) {
@@ -59,7 +69,7 @@ class CityTableViewCell: UITableViewCell {
         
         mainLabel.text = data.city_name + " | " + data.city_english_name
         
-        subLabel.text = data.city_explain
+        subLabel.text = "  \(data.city_explain)"
         
         
         

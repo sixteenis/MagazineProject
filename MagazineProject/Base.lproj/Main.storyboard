@@ -500,23 +500,36 @@
                                 <rect key="frame" x="8" y="158" width="377" height="611"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtN-Oi-gJD">
+                                <rect key="frame" x="0.0" y="103" width="393" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="hdh-Zd-AVc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fff-1s-G4Q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2ma-bC-qgY" firstAttribute="leading" secondItem="fff-1s-G4Q" secondAttribute="leading" constant="50" id="2hc-sh-sJ2"/>
                             <constraint firstItem="2ma-bC-qgY" firstAttribute="top" secondItem="fff-1s-G4Q" secondAttribute="top" constant="8" id="3eY-C6-6Gs"/>
+                            <constraint firstItem="fff-1s-G4Q" firstAttribute="trailing" secondItem="YtN-Oi-gJD" secondAttribute="trailing" id="La6-9b-SQ2"/>
+                            <constraint firstItem="YtN-Oi-gJD" firstAttribute="leading" secondItem="fff-1s-G4Q" secondAttribute="leading" id="MLc-Nu-4SS"/>
                             <constraint firstItem="uFw-uQ-rPk" firstAttribute="top" secondItem="2ma-bC-qgY" secondAttribute="bottom" constant="16" id="Pfi-1h-PBb"/>
                             <constraint firstItem="fff-1s-G4Q" firstAttribute="bottom" secondItem="uFw-uQ-rPk" secondAttribute="bottom" id="SZN-kI-RwM"/>
                             <constraint firstItem="fff-1s-G4Q" firstAttribute="trailing" secondItem="uFw-uQ-rPk" secondAttribute="trailing" constant="8" id="dpX-C3-DOK"/>
                             <constraint firstItem="2ma-bC-qgY" firstAttribute="centerX" secondItem="HTx-vj-hSn" secondAttribute="centerX" id="fZc-2K-BA3"/>
                             <constraint firstItem="uFw-uQ-rPk" firstAttribute="leading" secondItem="fff-1s-G4Q" secondAttribute="leading" constant="8" id="fqO-yk-yPy"/>
+                            <constraint firstItem="YtN-Oi-gJD" firstAttribute="top" secondItem="fff-1s-G4Q" secondAttribute="top" id="lwY-eE-MGt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="인기 도시" id="8FO-ej-54D"/>
                     <connections>
                         <outlet property="citySegment" destination="2ma-bC-qgY" id="HDa-Tk-nDl"/>
                         <outlet property="cityTabelView" destination="uFw-uQ-rPk" id="9fX-0z-BSa"/>
+                        <outlet property="lineLabel" destination="YtN-Oi-gJD" id="4O8-jR-bD2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aqF-Vr-bso" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

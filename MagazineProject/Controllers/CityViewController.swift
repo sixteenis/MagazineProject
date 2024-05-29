@@ -9,6 +9,7 @@ import UIKit
 
 class CityViewController: UIViewController {
 
+    @IBOutlet var lineLabel: UILabel!
     @IBOutlet var citySegment: UISegmentedControl!
     @IBOutlet var cityTabelView: UITableView!
     
@@ -31,6 +32,9 @@ class CityViewController: UIViewController {
         citySegment.setTitle("모두", forSegmentAt: 0)
         citySegment.setTitle("국내", forSegmentAt: 1)
         citySegment.setTitle("국외", forSegmentAt: 2)
+        lineLabel.text = ""
+        lineLabel.layer.borderWidth = 0.5
+        lineLabel.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     
