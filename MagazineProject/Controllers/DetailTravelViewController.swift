@@ -29,8 +29,9 @@ class DetailTravelViewController: UIViewController {
             travelTitle.text = model.title
             
         }else{
+            //lessthan
             self.navigationItem.leftBarButtonItem?.tintColor = .black
-            self.navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(popButtonTapped)), animated: true)
+            self.navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(popButtonTapped)), animated: true)
             self.navigationItem.title = model.title
             
             travelTitle.text = model.description

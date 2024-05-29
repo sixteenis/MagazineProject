@@ -116,6 +116,7 @@ extension TravelViewController: UITableViewDelegate {
             let vc = storyboard?.instantiateViewController(withIdentifier: "DetailTravelViewController") as! DetailTravelViewController
             //let nav = UINavigationController(rootViewController: vc)
             vc.model = data
+            vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
             
             
