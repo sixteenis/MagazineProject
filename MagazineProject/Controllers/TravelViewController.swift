@@ -92,7 +92,7 @@ extension TravelViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = filterdArr[indexPath.row]
-        if data.ad! {
+        if data.ad {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell") as! AdTableViewCell
             cell.setData(data: data)
             
@@ -110,5 +110,23 @@ extension TravelViewController: UITableViewDataSource {
     }
 }
 extension TravelViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = filterdArr[indexPath.row]
+        if data.ad {
+            let vc = storyboard?.instantiateViewController(withIdentifier: "DetailTravelViewController") as! DetailTravelViewController
+            //let nav = UINavigationController(rootViewController: vc)
+            vc.model = data
+            present(vc, animated: true)
+            
+            
+        }else{
+            //관광지: Push
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "DetailTravelViewController") as! DetailTravelViewController
+            vc.model = data
+            navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        
+    }
 }

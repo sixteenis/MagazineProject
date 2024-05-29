@@ -19,6 +19,7 @@
 		065A52FC2C0387470002EB7E /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52FB2C0387460002EB7E /* Restaurant.swift */; };
 		065A52FE2C038FAB0002EB7E /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52FD2C038FAB0002EB7E /* RestaurantTableViewCell.swift */; };
 		065A53002C038FB90002EB7E /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52FF2C038FB90002EB7E /* RestaurantTableViewController.swift */; };
+		0663B5B72C07092E001AAE86 /* DetailTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0663B5B62C07092E001AAE86 /* DetailTravelViewController.swift */; };
 		066EB30C2C04628F0039F959 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066EB30B2C04628F0039F959 /* TravelModel.swift */; };
 		066EB30F2C0464300039F959 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066EB30E2C0464300039F959 /* TravelViewController.swift */; };
 		066EB3122C0464A40039F959 /* Label+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066EB3112C0464A40039F959 /* Label+.swift */; };
@@ -42,6 +43,7 @@
 		065A52FB2C0387460002EB7E /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		065A52FD2C038FAB0002EB7E /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		065A52FF2C038FB90002EB7E /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		0663B5B62C07092E001AAE86 /* DetailTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTravelViewController.swift; sourceTree = "<group>"; };
 		066EB30B2C04628F0039F959 /* TravelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		066EB30E2C0464300039F959 /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
 		066EB3112C0464A40039F959 /* Label+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Label+.swift"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				065A52F52C036E990002EB7E /* MagazineTableViewController.swift */,
 				065A52FF2C038FB90002EB7E /* RestaurantTableViewController.swift */,
 				066EB30E2C0464300039F959 /* TravelViewController.swift */,
+				0663B5B62C07092E001AAE86 /* DetailTravelViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				066EB30C2C04628F0039F959 /* TravelModel.swift in Sources */,
 				066EB30F2C0464300039F959 /* TravelViewController.swift in Sources */,
 				065A52DD2C00A3310002EB7E /* AppDelegate.swift in Sources */,
+				0663B5B72C07092E001AAE86 /* DetailTravelViewController.swift in Sources */,
 				065A52DF2C00A3310002EB7E /* SceneDelegate.swift in Sources */,
 				066EB31B2C0466730039F959 /* AdTableViewCell.swift in Sources */,
 				065A52FE2C038FAB0002EB7E /* RestaurantTableViewCell.swift in Sources */,

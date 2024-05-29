@@ -130,14 +130,75 @@
                     <connections>
                         <segue destination="pHd-HV-Dd9" kind="relationship" relationship="viewControllers" id="gjY-JM-l7f"/>
                         <segue destination="lSc-ZD-dJn" kind="relationship" relationship="viewControllers" id="LqH-ks-fq6"/>
-                        <segue destination="lUd-Zw-GDC" kind="relationship" relationship="viewControllers" id="WPf-q4-10Z"/>
+                        <segue destination="ih1-4i-2jr" kind="relationship" relationship="viewControllers" id="WPf-q4-10Z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFT-u9-BWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1270.9923664122136" y="-51.408450704225352"/>
         </scene>
-        <!--도시정보-->
+        <!--DetailAD View Controller-->
+        <scene sceneID="n05-kq-pt8">
+            <objects>
+                <viewController storyboardIdentifier="DetailADViewController" id="frz-uT-MvM" customClass="DetailADViewController" customModule="MagazineProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="byX-XL-BS0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Q3I-Dn-IvT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBw-5W-2Yn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111" y="1129"/>
+        </scene>
+        <!--Detail Travel View Controller-->
+        <scene sceneID="aHN-qN-z9S">
+            <objects>
+                <viewController storyboardIdentifier="DetailTravelViewController" id="4QX-EH-iel" customClass="DetailTravelViewController" customModule="MagazineProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R3j-Ux-utM">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yk-Gr-udv">
+                                <rect key="frame" x="10" y="69" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="AOT-bm-bKz"/>
+                                    <constraint firstAttribute="width" constant="35" id="KLL-lV-UT4"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="dissButtonTapped:" destination="4QX-EH-iel" eventType="touchUpInside" id="gDS-Ph-7ek"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKq-0Y-fJH">
+                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d6e-kj-Zaf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MKq-0Y-fJH" firstAttribute="centerX" secondItem="R3j-Ux-utM" secondAttribute="centerX" id="9tb-Ir-aSO"/>
+                            <constraint firstItem="MKq-0Y-fJH" firstAttribute="centerY" secondItem="R3j-Ux-utM" secondAttribute="centerY" id="FI1-lS-lzb"/>
+                            <constraint firstItem="5yk-Gr-udv" firstAttribute="leading" secondItem="d6e-kj-Zaf" secondAttribute="leading" constant="10" id="XZA-26-4ky"/>
+                            <constraint firstItem="5yk-Gr-udv" firstAttribute="top" secondItem="d6e-kj-Zaf" secondAttribute="top" constant="10" id="qco-1R-thg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AMz-Xf-wdm"/>
+                    <connections>
+                        <outlet property="dissButton" destination="5yk-Gr-udv" id="PQb-hY-Wls"/>
+                        <outlet property="travelTitle" destination="MKq-0Y-fJH" id="qrU-6H-tBC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7jZ-Bb-ijH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-176" y="420"/>
+        </scene>
+        <!--Travel View Controller-->
         <scene sceneID="ex1-tw-Ju7">
             <objects>
                 <viewController id="lUd-Zw-GDC" customClass="TravelViewController" customModule="MagazineProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -146,7 +207,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Avc-Xh-uYM">
-                                <rect key="frame" x="16" y="59" width="361" height="24"/>
+                                <rect key="frame" x="16" y="103" width="361" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="bUp-vB-Q5O"/>
                                 </constraints>
@@ -155,7 +216,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lpe-xL-aj9">
-                                <rect key="frame" x="0.0" y="91" width="393" height="1"/>
+                                <rect key="frame" x="0.0" y="135" width="393" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="q1i-80-Tuv"/>
                                 </constraints>
@@ -164,7 +225,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZCT-lB-yLr">
-                                <rect key="frame" x="16" y="108" width="361" height="645"/>
+                                <rect key="frame" x="16" y="152" width="361" height="601"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1OR-zI-Mz9">
@@ -191,7 +252,7 @@
                             <constraint firstItem="ZCT-lB-yLr" firstAttribute="leading" secondItem="Rw7-y7-AyB" secondAttribute="leading" constant="16" id="xA0-h0-xfW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="도시정보" id="uwQ-vf-bdw"/>
+                    <navigationItem key="navigationItem" id="jyw-ES-2wK"/>
                     <connections>
                         <outlet property="headLabel" destination="Avc-Xh-uYM" id="3X8-A3-ftt"/>
                         <outlet property="lineLabel" destination="lpe-xL-aj9" id="wOT-5G-wzS"/>
@@ -201,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OUb-Ti-6Tp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1345.8015267175572" y="786.61971830985919"/>
+            <point key="canvasLocation" x="3199.2366412213737" y="786.61971830985919"/>
         </scene>
         <!--식당 검색-->
         <scene sceneID="6qF-fh-qxU">
@@ -416,7 +477,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUu-qy-37v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2238.9312977099235" y="554.92957746478874"/>
+            <point key="canvasLocation" x="4525.9541984732823" y="750.70422535211276"/>
+        </scene>
+        <!--도시정보-->
+        <scene sceneID="Act-1G-jA7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ih1-4i-2jr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="도시정보" id="uwQ-vf-bdw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P12-nj-Jeh">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lUd-Zw-GDC" kind="relationship" relationship="rootViewController" id="gCh-vT-cde"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sir-32-IxL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2272.5190839694656" y="786.61971830985919"/>
         </scene>
     </scenes>
     <resources>

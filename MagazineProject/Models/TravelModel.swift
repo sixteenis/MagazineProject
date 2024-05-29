@@ -12,7 +12,7 @@ struct Travel {
     let grade: Double?
     let save: Int?
     var like: Bool?
-    let ad: Bool?
+    let ad: Bool
     let id = UUID().hashValue
     //흠냥...
     //tag의 단위가
