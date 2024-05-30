@@ -13,16 +13,14 @@ class MapViewController: UIViewController {
     
     @IBOutlet var mapKit: MKMapView!
     let foodArr = RestaurantList().restaurantArray
-    //var foodDatafilter: [Restaurant] = []
     let alert = UIAlertController(
         title: "메뉴 선택",
-        message: "원하는 메뉴를 선택해주세요.",
+        message: nil,
         preferredStyle: .actionSheet
     )
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapKit.delegate = self
         setupView()
         setupAlert()
         setupAnnotation()
@@ -85,13 +83,3 @@ class MapViewController: UIViewController {
 
 }
 
-
-extension MapViewController: MKMapViewDelegate{
-    func mapView(_ mapView: MKMapView, didSelect annotation: any MKAnnotation) {
-        print(#function)
-    }
-    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        print(#function)
-    }
-    
-}
