@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import MapKit
 struct Restaurant {    
     let image: String
     let latitude: Double
@@ -35,6 +35,9 @@ struct Restaurant {
     var imageURL: URL? {
         let url = URL(string: self.image)
         return url
+    }
+    var loaction: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: self.latitude, longitude: self.longitude)
     }
 }
 

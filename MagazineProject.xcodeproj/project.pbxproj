@@ -11,6 +11,7 @@
 		062C37992C0757DD00B7701A /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062C37982C0757DD00B7701A /* CityInfo.swift */; };
 		062C379E2C075A0700B7701A /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062C379C2C075A0700B7701A /* CityTableViewCell.swift */; };
 		062C379F2C075A0700B7701A /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 062C379D2C075A0700B7701A /* CityTableViewCell.xib */; };
+		064922212C086585007E663C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064922202C086585007E663C /* MapViewController.swift */; };
 		065A52DD2C00A3310002EB7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52DC2C00A3310002EB7E /* AppDelegate.swift */; };
 		065A52DF2C00A3310002EB7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52DE2C00A3310002EB7E /* SceneDelegate.swift */; };
 		065A52E42C00A3310002EB7E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 065A52E32C00A3310002EB7E /* Base */; };
@@ -38,6 +39,7 @@
 		062C37982C0757DD00B7701A /* CityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
 		062C379C2C075A0700B7701A /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		062C379D2C075A0700B7701A /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
+		064922202C086585007E663C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		065A52D92C00A3310002EB7E /* MagazineProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagazineProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		065A52DC2C00A3310002EB7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065A52DE2C00A3310002EB7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		064922222C086771007E663C /* City */ = {
+			isa = PBXGroup;
+			children = (
+				062C37962C0757A200B7701A /* CityViewController.swift */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		064922232C086778007E663C /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				066EB30E2C0464300039F959 /* TravelViewController.swift */,
+				0663B5B62C07092E001AAE86 /* DetailTravelViewController.swift */,
+			);
+			path = Travel;
+			sourceTree = "<group>";
+		};
+		064922242C08677F007E663C /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				065A52FF2C038FB90002EB7E /* RestaurantTableViewController.swift */,
+				064922202C086585007E663C /* MapViewController.swift */,
+			);
+			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		064922252C08678D007E663C /* Magazine */ = {
+			isa = PBXGroup;
+			children = (
+				065A52F52C036E990002EB7E /* MagazineTableViewController.swift */,
+			);
+			path = Magazine;
+			sourceTree = "<group>";
+		};
 		065A52D02C00A3310002EB7E = {
 			isa = PBXGroup;
 			children = (
@@ -120,11 +156,10 @@
 		066EB30D2C0462ED0039F959 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				065A52F52C036E990002EB7E /* MagazineTableViewController.swift */,
-				065A52FF2C038FB90002EB7E /* RestaurantTableViewController.swift */,
-				066EB30E2C0464300039F959 /* TravelViewController.swift */,
-				0663B5B62C07092E001AAE86 /* DetailTravelViewController.swift */,
-				062C37962C0757A200B7701A /* CityViewController.swift */,
+				064922252C08678D007E663C /* Magazine */,
+				064922242C08677F007E663C /* Restaurant */,
+				064922232C086778007E663C /* Travel */,
+				064922222C086771007E663C /* City */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +280,7 @@
 				065A52DF2C00A3310002EB7E /* SceneDelegate.swift in Sources */,
 				066EB31B2C0466730039F959 /* AdTableViewCell.swift in Sources */,
 				062C37972C0757A200B7701A /* CityViewController.swift in Sources */,
+				064922212C086585007E663C /* MapViewController.swift in Sources */,
 				065A52FE2C038FAB0002EB7E /* RestaurantTableViewCell.swift in Sources */,
 				065A53002C038FB90002EB7E /* RestaurantTableViewController.swift in Sources */,
 				062C37992C0757DD00B7701A /* CityInfo.swift in Sources */,

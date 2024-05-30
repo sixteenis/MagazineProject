@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -129,7 +130,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="pHd-HV-Dd9" kind="relationship" relationship="viewControllers" id="gjY-JM-l7f"/>
-                        <segue destination="lSc-ZD-dJn" kind="relationship" relationship="viewControllers" id="LqH-ks-fq6"/>
+                        <segue destination="sEc-dd-Ut1" kind="relationship" relationship="viewControllers" id="LqH-ks-fq6"/>
                         <segue destination="ih1-4i-2jr" kind="relationship" relationship="viewControllers" id="WPf-q4-10Z"/>
                         <segue destination="Yi0-Ln-uXu" kind="relationship" relationship="viewControllers" id="MAE-BC-uco"/>
                     </connections>
@@ -243,7 +244,7 @@
             </objects>
             <point key="canvasLocation" x="3199.2366412213737" y="786.61971830985919"/>
         </scene>
-        <!--식당 검색-->
+        <!--Restaurant Table View Controller-->
         <scene sceneID="6qF-fh-qxU">
             <objects>
                 <tableViewController id="lSc-ZD-dJn" customClass="RestaurantTableViewController" customModule="MagazineProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -442,7 +443,6 @@
                             <outlet property="delegate" destination="lSc-ZD-dJn" id="J55-fX-cWN"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="식당 검색" id="EH6-ry-8GA"/>
                     <navigationItem key="navigationItem" id="A7j-4n-hsa"/>
                     <connections>
                         <outlet property="searchButton" destination="gfg-gg-1xi" id="aRS-nP-qeo"/>
@@ -456,7 +456,37 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUu-qy-37v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4525.9541984732823" y="750.70422535211276"/>
+            <point key="canvasLocation" x="5452.6717557251905" y="750.70422535211276"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="OrU-aV-c0r">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="Hob-CA-m7f" customClass="MapViewController" customModule="MagazineProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NPS-gF-aqY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnb-Pj-OUW">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VGn-PU-KJw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mnb-Pj-OUW" firstAttribute="top" secondItem="VGn-PU-KJw" secondAttribute="top" id="8Ns-pU-DkF"/>
+                            <constraint firstItem="mnb-Pj-OUW" firstAttribute="leading" secondItem="VGn-PU-KJw" secondAttribute="leading" id="9Zm-Vs-A3t"/>
+                            <constraint firstItem="VGn-PU-KJw" firstAttribute="bottom" secondItem="mnb-Pj-OUW" secondAttribute="bottom" id="JkH-Dr-uzB"/>
+                            <constraint firstItem="VGn-PU-KJw" firstAttribute="trailing" secondItem="mnb-Pj-OUW" secondAttribute="trailing" id="jFl-D1-QK0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapKit" destination="mnb-Pj-OUW" id="Gi6-LD-BYj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="juA-wV-Ckb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6283.2061068702287" y="738.73239436619724"/>
         </scene>
         <!--도시정보-->
         <scene sceneID="Act-1G-jA7">
@@ -554,6 +584,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4SV-ob-MmB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2272.5190839694656" y="1451.4084507042255"/>
+        </scene>
+        <!--식당 검색-->
+        <scene sceneID="7Qr-6i-JEe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sEc-dd-Ut1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="식당 검색" id="EH6-ry-8GA"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sli-Xm-TCT">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lSc-ZD-dJn" kind="relationship" relationship="rootViewController" id="NQh-44-NIK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEC-k0-kuI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4525.9541984732823" y="750.70422535211276"/>
         </scene>
     </scenes>
     <resources>

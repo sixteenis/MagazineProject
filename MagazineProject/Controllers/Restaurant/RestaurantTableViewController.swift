@@ -25,12 +25,18 @@ class RestaurantTableViewController: UITableViewController {
     func setView() {
         searchTextField.placeholder = "식당 이름을 입력해주세요."
         searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        searchButton.tintColor = .black
         
         for i in 0..<foodType.count{
             buttonSet(button: subButtonArr[i], title: foodType[i])
             subButtonArr[i].tag = i
         }
         filterArr = restaurantArr
+        
+        navigationItem.title = "주변 맛집"
+        let navitem = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(mapButtonTapped))
+        navigationItem.rightBarButtonItem = navitem
+        navigationItem.rightBarButtonItem?.tintColor = .black
     }
     func buttonSet(button: UIButton, title: String) {
         button.setTitle(title, for: .normal)
@@ -53,7 +59,18 @@ class RestaurantTableViewController: UITableViewController {
         return cell
         
     }
-
+    
+    // MARK: - 지도 뷰로 이동하는 코드
+    @objc func mapButtonTapped() {
+        print("dd")
+        // 1. 스토리보드 가져오기
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        //name: 파일명 , bundle: 내가 만든거면 nil
+        // 2. 스토리보드 내 전환하고자 하는 화면 가져오기
+        let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        // 3. 화면 띄우기
+        navigationController?.pushViewController(vc, animated: true)
+    }
     @IBAction func textFieldEndDid(_ sender: UITextField) {
     }
     
@@ -85,5 +102,8 @@ class RestaurantTableViewController: UITableViewController {
 
         
     }
+    
+    
+    
     
 }

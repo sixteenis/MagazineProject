@@ -46,11 +46,11 @@ class CityTableViewCell: UITableViewCell {
         backgroundImage.contentMode = .scaleAspectFill
         
         
-//        shadowImage.layer.shadowOffset = CGSize(width: 50, height: 50)
-//        shadowImage.layer.shadowOpacity = 0.7
-//        //shadowImage.layer.shadowRadius = 5
-//        //shadowImage.layer.shadowColor = UIColor..cgColor
-//        shadowImage.translatesAutoresizingMaskIntoConstraints = false
+        shadowImage.layer.shadowOffset = CGSize(width: 500, height: 500)
+        shadowImage.layer.shadowOpacity = 0.7
+        shadowImage.layer.shadowRadius = 5
+        shadowImage.layer.shadowColor = UIColor.red.cgColor
+        shadowImage.translatesAutoresizingMaskIntoConstraints = false
     
         mainLabel.font = .boldSystemFont(ofSize: 20)
         mainLabel.textColor = .white
