@@ -128,6 +128,7 @@ extension TravelViewController: UITableViewDelegate {
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "DetailTravelViewController") as! DetailTravelViewController
             vc.model = data
+            tableView.reloadRows(at: [indexPath], with: .automatic)
             navigationController?.pushViewController(vc, animated: true)
             
         }
