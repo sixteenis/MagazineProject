@@ -8,9 +8,6 @@
 import UIKit
 
 class CityTableViewCell: UITableViewCell {
-
-    
-    @IBOutlet var shadowImage: UIImageView!
     @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var mainLabel: UILabel!
     @IBOutlet var subLabel: UILabel!
@@ -19,39 +16,20 @@ class CityTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setupCell()
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
 
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
     }
+    
     func setupCell() {
-    
-//        backgroundImage.layer.shadowOffset = CGSize(width: 5, height: 5)
-//        backgroundImage.layer.shadowOpacity = 0.7
-//        backgroundImage.layer.shadowRadius = 5
-//        backgroundImage.layer.shadowColor = UIColor.gray.cgColor
-//        backgroundImage.translatesAutoresizingMaskIntoConstraints = false
-        //let outerView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-//        shadowImage.clipsToBounds = false
-//        shadowImage.layer.shadowColor = UIColor.black.cgColor
-//        shadowImage.layer.shadowOpacity = 1
-//        shadowImage.layer.shadowOffset = CGSize.zero
-//        shadowImage.layer.shadowRadius = 10
-//        shadowImage.layer.shadowPath = UIBezierPath(roundedRect: shadowImage.bounds, cornerRadius: 10).cgPath
-    
         backgroundImage.layer.cornerRadius = 20
         backgroundImage.layer.masksToBounds = true
         backgroundImage.clipsToBounds = true
         backgroundImage.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMinYCorner]
         backgroundImage.contentMode = .scaleAspectFill
         
-        
-        shadowImage.layer.shadowOffset = CGSize(width: 500, height: 500)
-        shadowImage.layer.shadowOpacity = 0.7
-        shadowImage.layer.shadowRadius = 5
-        shadowImage.layer.shadowColor = UIColor.red.cgColor
-        shadowImage.translatesAutoresizingMaskIntoConstraints = false
-    
         mainLabel.font = .boldSystemFont(ofSize: 20)
         mainLabel.textColor = .white
         mainLabel.textAlignment = .right
@@ -61,6 +39,11 @@ class CityTableViewCell: UITableViewCell {
         subLabel.textAlignment = .left
         subLabel.backgroundColor = .black
         subLabel.layer.opacity = 0.7
+        subLabel.layer.cornerRadius = 20
+        subLabel.layer.masksToBounds = true
+        subLabel.clipsToBounds = true
+        subLabel.layer.maskedCorners = [.layerMaxXMaxYCorner]
+        
     }
 
     func setupCellData(data: City) {

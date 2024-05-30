@@ -20,9 +20,6 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ToE-Ut-rba">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qBu-WP-frf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKk-HP-NOV">
                         <rect key="frame" x="270" y="8" width="42" height="30"/>
                         <constraints>
@@ -44,17 +41,13 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="ToE-Ut-rba" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2wZ-1C-wdN"/>
-                    <constraint firstItem="qBu-WP-frf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4jA-8o-EQX"/>
                     <constraint firstAttribute="trailing" secondItem="dGd-zY-DO4" secondAttribute="trailing" id="BkQ-yV-Pw8"/>
                     <constraint firstAttribute="trailing" secondItem="FKk-HP-NOV" secondAttribute="trailing" constant="8" id="E9v-v5-uaK"/>
-                    <constraint firstItem="qBu-WP-frf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Kkv-t9-ddv"/>
                     <constraint firstItem="FKk-HP-NOV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="LLW-FS-mrR"/>
                     <constraint firstItem="dGd-zY-DO4" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="MlS-eO-xRh"/>
                     <constraint firstAttribute="bottom" secondItem="dGd-zY-DO4" secondAttribute="bottom" id="V1M-xX-RTr"/>
                     <constraint firstAttribute="trailing" secondItem="ToE-Ut-rba" secondAttribute="trailing" id="ZPR-1c-Dsz"/>
-                    <constraint firstAttribute="trailing" secondItem="qBu-WP-frf" secondAttribute="trailing" id="aIm-Lm-vpW"/>
                     <constraint firstItem="ToE-Ut-rba" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="l5P-an-NcV"/>
-                    <constraint firstAttribute="bottom" secondItem="qBu-WP-frf" secondAttribute="bottom" id="pTW-Sx-Mr1"/>
                     <constraint firstAttribute="bottom" secondItem="ToE-Ut-rba" secondAttribute="bottom" id="tZG-pP-Cvw"/>
                 </constraints>
             </tableViewCellContentView>
@@ -62,7 +55,6 @@
             <connections>
                 <outlet property="backgroundImage" destination="ToE-Ut-rba" id="p3Z-og-RTP"/>
                 <outlet property="mainLabel" destination="FKk-HP-NOV" id="v9v-Q1-eDI"/>
-                <outlet property="shadowImage" destination="qBu-WP-frf" id="B6K-vb-zBG"/>
                 <outlet property="subLabel" destination="dGd-zY-DO4" id="FAw-jR-kzf"/>
             </connections>
             <point key="canvasLocation" x="129.7709923664122" y="23.943661971830988"/>

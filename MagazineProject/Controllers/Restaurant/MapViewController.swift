@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+
 class MapViewController: UIViewController {
     
     
@@ -32,21 +33,9 @@ class MapViewController: UIViewController {
         navigationItem.rightBarButtonItem?.tintColor = .black
     }
     func setupAlert() {
-        let ko = UIAlertAction(title: "한식", style: .default,handler: { title in
-            let filterArr = self.foodArr.filter{ $0.category == title.title}
-            self.changeAnnotation(data: filterArr)
-            
-        })
-        let jp = UIAlertAction(title: "일식", style: .default, handler: { title in
-            let filterArr = self.foodArr.filter{ $0.category == title.title}
-            self.changeAnnotation(data: filterArr)
-            
-        })
-        let usa = UIAlertAction(title: "양식", style: .default, handler: { title in
-            let filterArr = self.foodArr.filter{ $0.category == title.title}
-            self.changeAnnotation(data: filterArr)
-            
-        })
+        let ko = UIAlertAction(title: "한식", style: .default,handler: {self.alertbuttonTapped($0)})
+        let jp = UIAlertAction(title: "일식", style: .default, handler: {self.alertbuttonTapped($0)})
+        let usa = UIAlertAction(title: "양식", style: .default, handler: {self.alertbuttonTapped($0)})
         let all = UIAlertAction(title: "전체", style: .default, handler: { title in
             let filterArr = self.foodArr
             self.changeAnnotation(data: filterArr)
@@ -75,12 +64,14 @@ class MapViewController: UIViewController {
             annotation.title = data[i].name
 
             mapKit.addAnnotation(annotation)
-            
-            
         }
-        
-        
     }
+    
+    func alertbuttonTapped(_ title: UIAlertAction) {
+        let filterArr = self.foodArr.filter{ $0.category == title.title}
+        self.changeAnnotation(data: filterArr)
+    }
+    
     func changeAnnotation(data:[Restaurant]) {
         mapKit.removeAnnotations(mapKit.annotations)
         addAnnotation(data: data)
@@ -104,41 +95,3 @@ extension MapViewController: MKMapViewDelegate{
     }
     
 }
-//extension MapViewController: UIActionSheetDelegate{
-//    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
-//        print(#function)
-//        print(buttonIndex)
-//    }
-//}
-//extension MapViewController: UITextFieldDelegate {
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        print("리턴키 클릭")
-//        return true
-//    }
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        print("커서가 깜빡임")
-//    }
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        print("커서 끝남")
-//    }
-//}
-//extension MapViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        return list.count
-//    }
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//    
-//        return list[row]
-//        
-//    }
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        mapTextField.text = list[row]
-//        print(#function)
-//        print(component, row)
-//    }
-//    
-//}
