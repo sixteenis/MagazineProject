@@ -20,8 +20,8 @@ class CityViewController: UIViewController {
         cityTabelView.dataSource = self
         cityTabelView.delegate = self
         
-        let cityXib = UINib(nibName: "CityTableViewCell", bundle: nil)
-        cityTabelView.register(cityXib, forCellReuseIdentifier: "CityTableViewCell")
+        let cityXib = UINib(nibName: CityTableViewCell.identifier, bundle: nil)
+        cityTabelView.register(cityXib, forCellReuseIdentifier: CityTableViewCell.identifier)
         cityTabelView.rowHeight = 160
         //filterdArr = travelArr
         
@@ -64,7 +64,7 @@ extension CityViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = filterdArr[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CityTableViewCell") as! CityTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CityTableViewCell.identifier) as! CityTableViewCell
         //cell.setData(data: data)
         cell.setupCellData(data: data)
         return cell
@@ -72,23 +72,5 @@ extension CityViewController: UITableViewDataSource {
     }
 }
 extension CityViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let data = filterdArr[indexPath.row]
-//        if data.ad {
-//            let vc = storyboard?.instantiateViewController(withIdentifier: "DetailTravelViewController") as! DetailTravelViewController
-//            vc.model = data
-//            vc.modalPresentationStyle = .fullScreen
-//            present(vc, animated: true)
-//            
-//            
-//        }else{
-//            //관광지: Push
-//            let sb = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = sb.instantiateViewController(withIdentifier: "DetailTravelViewController") as! DetailTravelViewController
-//            vc.model = data
-//            navigationController?.pushViewController(vc, animated: true)
-//            
-//        }
-//        
-//    }
+
 }

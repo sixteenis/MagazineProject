@@ -97,13 +97,13 @@ extension TravelViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = filterdArr[indexPath.row]
         if data.ad {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "AdTableViewCell") as! AdTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: AdTableViewCell.identifier) as! AdTableViewCell
             cell.setData(data: data)
             
             return cell
             
         }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TravelTableViewCell") as! TravelTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.identifier) as! TravelTableViewCell
             cell.setData(data: data)
             cell.loveButton.addTarget(self, action: #selector(loveTappend), for: .touchUpInside)
             cell.loveButton.tag = data.id
@@ -117,7 +117,7 @@ extension TravelViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = filterdArr[indexPath.row]
         if data.ad {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "DetailTravelViewController") as! DetailTravelViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: DetailTravelViewController.identifier) as! DetailTravelViewController
             vc.model = data
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
@@ -126,7 +126,7 @@ extension TravelViewController: UITableViewDelegate {
         }else{
             //관광지: Push
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "DetailTravelViewController") as! DetailTravelViewController
+            let vc = sb.instantiateViewController(withIdentifier: DetailTravelViewController.identifier) as! DetailTravelViewController
             vc.model = data
             tableView.reloadRows(at: [indexPath], with: .automatic)
             navigationController?.pushViewController(vc, animated: true)

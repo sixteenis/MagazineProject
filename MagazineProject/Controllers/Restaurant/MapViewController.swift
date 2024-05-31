@@ -24,6 +24,7 @@ class MapViewController: UIViewController {
         setupView()
         setupAlert()
         setupAnnotation()
+        addAnnotation(data: foodArr)
     }
     func setupView() {
         let navitem = UIBarButtonItem(title: "Fliter", style: .plain, target: self, action: #selector(fliterButtonTapped))
@@ -52,7 +53,7 @@ class MapViewController: UIViewController {
     func setupAnnotation(){
         let loaction = CLLocationCoordinate2D(latitude: 37.517940, longitude: 126.886881)
         mapKit.region = MKCoordinateRegion(center: loaction, latitudinalMeters: 500, longitudinalMeters: 500)
-        addAnnotation(data: foodArr)
+        
         
     }
     func addAnnotation(data: [Restaurant]){

@@ -53,7 +53,7 @@ class RestaurantTableViewController: UITableViewController {
         return filterArr.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell", for: indexPath) as! RestaurantTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.identifier, for: indexPath) as! RestaurantTableViewCell
         let data = filterArr[indexPath.row]
         cell.cellDataSet(data: data)
         return cell
@@ -62,12 +62,11 @@ class RestaurantTableViewController: UITableViewController {
     
     // MARK: - 지도 뷰로 이동하는 코드
     @objc func mapButtonTapped() {
-        print("dd")
         // 1. 스토리보드 가져오기
         let sb = UIStoryboard(name: "Main", bundle: nil)
         //name: 파일명 , bundle: 내가 만든거면 nil
         // 2. 스토리보드 내 전환하고자 하는 화면 가져오기
-        let vc = sb.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        let vc = sb.instantiateViewController(withIdentifier: MapViewController.identifier) as! MapViewController
         // 3. 화면 띄우기
         navigationController?.pushViewController(vc, animated: true)
     }

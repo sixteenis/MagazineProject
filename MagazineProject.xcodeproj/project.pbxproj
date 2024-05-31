@@ -12,6 +12,7 @@
 		062C379E2C075A0700B7701A /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062C379C2C075A0700B7701A /* CityTableViewCell.swift */; };
 		062C379F2C075A0700B7701A /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 062C379D2C075A0700B7701A /* CityTableViewCell.xib */; };
 		064922212C086585007E663C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064922202C086585007E663C /* MapViewController.swift */; };
+		0649222F2C09A8BE007E663C /* ReuseIdentifier+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649222E2C09A8BE007E663C /* ReuseIdentifier+.swift */; };
 		065A52DD2C00A3310002EB7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52DC2C00A3310002EB7E /* AppDelegate.swift */; };
 		065A52DF2C00A3310002EB7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52DE2C00A3310002EB7E /* SceneDelegate.swift */; };
 		065A52E42C00A3310002EB7E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 065A52E32C00A3310002EB7E /* Base */; };
@@ -40,6 +41,7 @@
 		062C379C2C075A0700B7701A /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		062C379D2C075A0700B7701A /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		064922202C086585007E663C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		0649222E2C09A8BE007E663C /* ReuseIdentifier+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReuseIdentifier+.swift"; sourceTree = "<group>"; };
 		065A52D92C00A3310002EB7E /* MagazineProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagazineProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		065A52DC2C00A3310002EB7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065A52DE2C00A3310002EB7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				066EB3112C0464A40039F959 /* Label+.swift */,
+				0649222E2C09A8BE007E663C /* ReuseIdentifier+.swift */,
 			);
 			path = "Extension+";
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				066EB3122C0464A40039F959 /* Label+.swift in Sources */,
+				0649222F2C09A8BE007E663C /* ReuseIdentifier+.swift in Sources */,
 				066EB3172C0466600039F959 /* TravelTableViewCell.swift in Sources */,
 				062C379E2C075A0700B7701A /* CityTableViewCell.swift in Sources */,
 				065A52F62C036E990002EB7E /* MagazineTableViewController.swift in Sources */,

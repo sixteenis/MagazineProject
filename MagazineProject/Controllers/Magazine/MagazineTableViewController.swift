@@ -13,7 +13,6 @@ class MagazineTableViewController: UITableViewController {
     @IBOutlet var titleLine: UILabel!
     
     let travelArr = MagazineInfo.magazine
-    let cellName = MagazineInfo.cellName
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +39,7 @@ extension MagazineTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! MagazineTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MagazineTableViewCell.identifier, for: indexPath) as! MagazineTableViewCell
         let data = travelArr[indexPath.row]
         cell.cellDataSet(data)
         
