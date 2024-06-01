@@ -30,3 +30,19 @@ extension UILabel{
         text = title
     }
 }
+
+// MARK: - chatting 부분
+extension UILabel{
+    func setUpchattingMainLabel(_ tColor: UIColor ) {
+        font = .systemFont(ofSize: 14)
+        textColor = tColor
+        textAlignment = .left
+        numberOfLines = 1
+    }
+    func setUpchattingMainLabel(_ tColor: UIColor, alignment:  NSTextAlignment ) {
+        font = .systemFont(ofSize: 14)
+        textColor = tColor
+        textAlignment = alignment
+        numberOfLines = 1
+    }
+}
