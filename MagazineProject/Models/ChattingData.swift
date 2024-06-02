@@ -43,6 +43,9 @@ struct Chat {
     let user: User
     let date: String
     let message: String
+//    var homedate: String {
+//        self.date.filter{}
+//    }
 
 }
 
