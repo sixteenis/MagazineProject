@@ -707,24 +707,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUe-Op-iUt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JH9-bO-pwb">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qZs-ri-fj9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zUe-Op-iUt" firstAttribute="top" secondItem="qZs-ri-fj9" secondAttribute="top" id="0jS-bF-sfd"/>
-                            <constraint firstItem="qZs-ri-fj9" firstAttribute="bottom" secondItem="zUe-Op-iUt" secondAttribute="bottom" id="85T-Uj-0Ai"/>
-                            <constraint firstItem="qZs-ri-fj9" firstAttribute="trailing" secondItem="zUe-Op-iUt" secondAttribute="trailing" id="gaI-lr-DJ3"/>
-                            <constraint firstItem="zUe-Op-iUt" firstAttribute="leading" secondItem="qZs-ri-fj9" secondAttribute="leading" id="jA8-bA-HZC"/>
+                            <constraint firstItem="JH9-bO-pwb" firstAttribute="top" secondItem="qZs-ri-fj9" secondAttribute="top" id="432-n0-Ifr"/>
+                            <constraint firstItem="JH9-bO-pwb" firstAttribute="leading" secondItem="qZs-ri-fj9" secondAttribute="leading" id="BYP-Oq-Z2R"/>
+                            <constraint firstItem="qZs-ri-fj9" firstAttribute="trailing" secondItem="JH9-bO-pwb" secondAttribute="trailing" id="oNy-pF-acd"/>
+                            <constraint firstItem="qZs-ri-fj9" firstAttribute="bottom" secondItem="JH9-bO-pwb" secondAttribute="bottom" id="pZd-CS-PQd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="testLabel" destination="zUe-Op-iUt" id="gT0-rq-UEw"/>
+                        <outlet property="chattingTableView" destination="JH9-bO-pwb" id="ee1-OI-oJs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bxf-at-8WJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

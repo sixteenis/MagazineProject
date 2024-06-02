@@ -13,19 +13,24 @@ class OthersChattingRoomTableViewCell: UITableViewCell {
     @IBOutlet var chattingLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
+    
+    @IBOutlet var chattingView: UIView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCell()
     }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        chattingLabel.layer.cornerRadius = chattingLabel.frame.width / 0.5
-        
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        chattingLabel.layer.cornerRadius = chattingLabel.frame.width / 0.5
+//        
+//    }
 
     func setUpCell() {
         profileImage.layer.cornerRadius = profileImage.frame.width / 2
         profileImage.clipsToBounds = true
+        profileImage.contentMode = .scaleAspectFill
         
         nameLabel.textColor = .black
         nameLabel.numberOfLines = 1
@@ -35,9 +40,13 @@ class OthersChattingRoomTableViewCell: UITableViewCell {
         chattingLabel.numberOfLines = 0
         chattingLabel.font = .systemFont(ofSize: 14)
         chattingLabel.textAlignment = .left
-        chattingLabel.layer.borderColor = UIColor.black.cgColor
-        chattingLabel.layer.borderWidth = 1
         
+        chattingView.backgroundColor = .white
+        chattingView.layer.cornerRadius = 10
+        chattingView.layer.borderColor = UIColor.lightGray.cgColor
+        chattingView.layer.borderWidth = 1
+        
+        dateLabel.font = .systemFont(ofSize: 11)
         dateLabel.textColor = .lightGray
         dateLabel.numberOfLines = 1
         dateLabel.textAlignment = .left

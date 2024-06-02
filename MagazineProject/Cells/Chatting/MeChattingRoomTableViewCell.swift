@@ -29,6 +29,7 @@ class MeChattingRoomTableViewCell: UITableViewCell {
         chattingLabel.layer.borderWidth = 1
         chattingLabel.layer.backgroundColor = UIColor.lightGray.cgColor
         
+        dateLabel.font = .systemFont(ofSize: 11)
         dateLabel.textColor = .lightGray
         dateLabel.numberOfLines = 1
         dateLabel.textAlignment = .right
