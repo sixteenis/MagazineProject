@@ -31,6 +31,8 @@ class ChattingRoomViewController: UIViewController {
         
         chattingTableView.estimatedRowHeight = 120.0
         chattingTableView.rowHeight = UITableView.automaticDimension
+        chattingTableView.separatorStyle = .none
+
         //chattingTableView.rowHeight = 120
         
     }
