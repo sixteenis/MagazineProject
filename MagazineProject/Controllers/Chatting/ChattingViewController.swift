@@ -12,7 +12,7 @@ class ChattingViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var profileTableView: UITableView!
     
-    @IBOutlet var lineLabel: UILabel!
+    
     var model = mockChatList {
         didSet{
             profileTableView.reloadData()
@@ -30,7 +30,9 @@ class ChattingViewController: UIViewController {
         profileTableView.dataSource = self
         
         let oneXib = UINib(nibName: OneChattingTableViewCell.identifier, bundle: nil)
+        let manyXib = UINib(nibName: ManyChattingTableViewCell.identifier, bundle: nil)
         profileTableView.register(oneXib, forCellReuseIdentifier: OneChattingTableViewCell.identifier)
+        profileTableView.register(manyXib, forCellReuseIdentifier: ManyChattingTableViewCell.identifier)
         profileTableView.rowHeight = 80
         
     }
@@ -41,10 +43,6 @@ class ChattingViewController: UIViewController {
     }
     func setUpNav() {
         navigationItem.title = "TRAVEL TALK"
-        
-        lineLabel.text = ""
-        lineLabel.layer.borderWidth = 1
-        lineLabel.layer.borderColor = UIColor.lightGray.cgColor
     }
     
 
@@ -58,12 +56,17 @@ extension ChattingViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = model[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: OneChattingTableViewCell.identifier) as! OneChattingTableViewCell
-        
-        cell.setUpCellData(data: data)
-        
-        
-        return cell
+        if data.chatroomImage.count == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: OneChattingTableViewCell.identifier) as! OneChattingTableViewCell
+            cell.setUpCellData(data: data)
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: ManyChattingTableViewCell.identifier) as! ManyChattingTableViewCell
+            
+            cell.setupDataCell(data: data)
+            return cell
+            
+        }
     }
     
     

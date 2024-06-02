@@ -673,37 +673,24 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EjA-h8-ezR">
-                                <rect key="frame" x="0.0" y="170" width="393" height="599"/>
+                                <rect key="frame" x="0.0" y="159" width="393" height="610"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAl-to-O4C">
-                                <rect key="frame" x="0.0" y="169" width="393" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="yEV-OC-OSR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TtK-8I-thG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="EjA-h8-ezR" firstAttribute="trailing" secondItem="TtK-8I-thG" secondAttribute="trailing" id="3Nt-Zn-jFu"/>
                             <constraint firstItem="QQm-9F-kr6" firstAttribute="trailing" secondItem="TtK-8I-thG" secondAttribute="trailing" id="4oW-V2-PkW"/>
                             <constraint firstItem="QQm-9F-kr6" firstAttribute="leading" secondItem="TtK-8I-thG" secondAttribute="leading" id="9R9-Xd-5Po"/>
-                            <constraint firstItem="EjA-h8-ezR" firstAttribute="top" secondItem="HAl-to-O4C" secondAttribute="bottom" id="DCS-GL-shW"/>
-                            <constraint firstItem="HAl-to-O4C" firstAttribute="leading" secondItem="TtK-8I-thG" secondAttribute="leading" id="DIF-Uk-FeH"/>
-                            <constraint firstItem="TtK-8I-thG" firstAttribute="bottom" secondItem="EjA-h8-ezR" secondAttribute="bottom" id="RcE-aU-Ahv"/>
+                            <constraint firstItem="EjA-h8-ezR" firstAttribute="leading" secondItem="TtK-8I-thG" secondAttribute="leading" id="BzS-Qs-WK9"/>
+                            <constraint firstItem="EjA-h8-ezR" firstAttribute="top" secondItem="QQm-9F-kr6" secondAttribute="bottom" id="Px8-ca-bW4"/>
                             <constraint firstItem="QQm-9F-kr6" firstAttribute="top" secondItem="TtK-8I-thG" secondAttribute="top" id="Xm9-hd-ElV"/>
-                            <constraint firstItem="EjA-h8-ezR" firstAttribute="leading" secondItem="TtK-8I-thG" secondAttribute="leading" id="ahO-SY-Aai"/>
-                            <constraint firstItem="TtK-8I-thG" firstAttribute="trailing" secondItem="EjA-h8-ezR" secondAttribute="trailing" id="gJ6-fw-Nag"/>
-                            <constraint firstItem="HAl-to-O4C" firstAttribute="top" secondItem="QQm-9F-kr6" secondAttribute="bottom" constant="10" id="iLZ-9B-teh"/>
-                            <constraint firstItem="TtK-8I-thG" firstAttribute="trailing" secondItem="HAl-to-O4C" secondAttribute="trailing" id="kfe-hV-n3n"/>
+                            <constraint firstItem="EjA-h8-ezR" firstAttribute="bottom" secondItem="TtK-8I-thG" secondAttribute="bottom" id="stc-A3-C1M"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ㅇㅁㅇㅁㄴㅇㅁ" style="browser" id="2bf-SJ-VB1"/>
                     <connections>
-                        <outlet property="lineLabel" destination="HAl-to-O4C" id="tEa-us-8ZD"/>
                         <outlet property="profileTableView" destination="EjA-h8-ezR" id="VBd-Zi-ec8"/>
                         <outlet property="searchBar" destination="QQm-9F-kr6" id="mgI-eI-xdU"/>
                     </connections>
