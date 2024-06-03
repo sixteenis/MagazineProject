@@ -13,7 +13,7 @@ class ChattingViewController: UIViewController {
     @IBOutlet var profileTableView: UITableView!
     
     
-    var model = mockChatList {
+    var model = MockChatList.mockChatList {
         didSet{
             profileTableView.reloadData()
         }
@@ -76,7 +76,7 @@ extension ChattingViewController: UITableViewDelegate {
         let data = model[indexPath.row]
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: ChattingRoomViewController.identifier) as! ChattingRoomViewController
-        vc.model = data
+        vc.chattingId = data.chatroomId - 1
         tableView.reloadRows(at: [indexPath], with: .automatic)
         navigationController?.pushViewController(vc, animated: true)
 
@@ -88,7 +88,7 @@ extension ChattingViewController: UITableViewDelegate {
 // MARK: - SearchBar 델리게이트
 extension ChattingViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        model = mockChatList.filter{
+        model = MockChatList.mockChatList.filter{
             view.endEditing(true)
             for i in $0.chatroomImage{
                 if i.contains(searchBar.text!){
@@ -99,7 +99,7 @@ extension ChattingViewController: UISearchBarDelegate {
                 //.chatroomImage.contains(searchBar.text!)
         }
         if model.isEmpty{
-            model = mockChatList
+            model = MockChatList.mockChatList
         }
         searchBar.text = nil
         print(model)
