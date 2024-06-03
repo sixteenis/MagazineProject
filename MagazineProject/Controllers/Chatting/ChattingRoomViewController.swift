@@ -22,7 +22,7 @@ class ChattingRoomViewController: UIViewController {
         super.viewDidLoad()
         setUpTableView()
         setUpChattingView()
-        keyboardhidding()
+        setUpKeyboard()
     }
     override func viewDidLayoutSubviews() {
             super.viewDidLayoutSubviews()
@@ -42,9 +42,7 @@ class ChattingRoomViewController: UIViewController {
         chattingTextField.textColor = .lightGray
         chattingTableView.reloadData()
         
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardhide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
     func setUpTableView(){
@@ -64,11 +62,6 @@ class ChattingRoomViewController: UIViewController {
         let item = UIBarButtonItem(image: UIImage(systemName: "lessthan"),style: .plain,  target: self, action: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem = item
         
-//        let lastRow = self.tableView.numberOfRows(inSection: 0) - 1
-//        let indexPath = IndexPath(row: lastRow, section: 0)
-//        self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
-        //chattingTableView.rowHeight = 120
-        
     }
     
     func setUpChattingView() {
@@ -85,6 +78,12 @@ class ChattingRoomViewController: UIViewController {
         chattingButton.setImage(UIImage(systemName: "paperplane"), for: .normal)
         chattingButton.addTarget(self, action: #selector(chattingButtonTapped), for: .touchUpInside)
         chattingButton.tintColor = UIColor.systemGray2
+    }
+    func setUpKeyboard() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardhide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        keyboardhidding()
     }
     
     

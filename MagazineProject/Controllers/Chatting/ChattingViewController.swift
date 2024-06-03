@@ -20,11 +20,15 @@ class ChattingViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpTableView()
         setUpSearchBar()
         setUpNav()
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        model = MockChatList.mockChatList
+        profileTableView.reloadData()
+        }
     func setUpTableView() {
         profileTableView.delegate = self
         profileTableView.dataSource = self
@@ -102,7 +106,8 @@ extension ChattingViewController: UISearchBarDelegate {
             model = MockChatList.mockChatList
         }
         searchBar.text = nil
-        print(model)
+        
+        //print(model)
     }
     
 }
