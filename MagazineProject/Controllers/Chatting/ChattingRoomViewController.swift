@@ -10,30 +10,32 @@ import UIKit
 class ChattingRoomViewController: UIViewController {
     @IBOutlet var chattingTableView: UITableView!
     
+    @IBOutlet var bottomCondtraint: NSLayoutConstraint!
     @IBOutlet var chattingTextField: UITextView!
     @IBOutlet var chattingButton: UIButton!
     @IBOutlet var chattingView: UIView!
     var chattingId = 0
-    //var model: ChatRoom? //{
-//        didSet{
-//            if model != nil{
-//                chattingTableView.reloadData()
-//            }
-//        }
-   // }
     let placeholder = "메시지를 입력하세요"
+    var isShowingKeybord = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
         setUpChattingView()
+        keyboardhidding()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         chattingTextField.text = placeholder
         chattingTextField.textColor = .lightGray
         chattingTableView.reloadData()
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardhide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
     func setUpTableView(){
         chattingTableView.delegate = self
         chattingTableView.dataSource = self
@@ -48,6 +50,8 @@ class ChattingRoomViewController: UIViewController {
         chattingTableView.separatorStyle = .none
         
         navigationItem.title = MockChatList.mockChatList[chattingId].chatroomName
+        let item = UIBarButtonItem(image: UIImage(systemName: "lessthan"),style: .plain,  target: self, action: #selector(backButtonTapped))
+        navigationItem.leftBarButtonItem = item
 
         //chattingTableView.rowHeight = 120
         
@@ -57,10 +61,22 @@ class ChattingRoomViewController: UIViewController {
         chattingTextField.text = placeholder
         chattingTextField.textColor = .lightGray
         chattingTextField.delegate = self
+        chattingTextField.layer.backgroundColor = .none
+        
+        
+        chattingView.layer.cornerRadius = 10
+        chattingView.layer.backgroundColor = UIColor.systemGray5.cgColor
         
         chattingButton.setTitle("", for: .normal)
         chattingButton.setImage(UIImage(systemName: "paperplane"), for: .normal)
         chattingButton.addTarget(self, action: #selector(chattingButtonTapped), for: .touchUpInside)
+        chattingButton.tintColor = UIColor.systemGray2
+    }
+    
+    
+    
+    @objc func backButtonTapped() {
+        navigationController?.popViewController(animated: true)
     }
     @objc func chattingButtonTapped() {
         //"2024-06-12 21:30"
@@ -76,6 +92,26 @@ class ChattingRoomViewController: UIViewController {
         }
         
     }
+
+    @objc func adjustForKeyboard(notification: Notification) {
+        guard let keyboardValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+
+        let keyboardScreenEndFrame = keyboardValue.cgRectValue
+        let keyboardViewEndFrame = keyboardScreenEndFrame.height
+        self.bottomCondtraint.constant = keyboardViewEndFrame - 70
+    }
+    @objc func keyboardhide(notification: Notification) {
+        bottomCondtraint.constant = 0
+    }
+    func keyboardhidding() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(keyboardremove))
+        self.view.addGestureRecognizer(tap)
+    }
+    @objc func keyboardremove() {
+        view.endEditing(true)
+        
+    }
+    
     
 }
 

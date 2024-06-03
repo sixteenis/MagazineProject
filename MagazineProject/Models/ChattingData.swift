@@ -17,14 +17,6 @@ enum User: String {
     
     var profileImage: String {
         switch self {
-//        case .hue: return rawValue
-//        case .jack: return rawValue
-//        case .bran: return rawValue
-//        case .den: return rawValue
-//        case .user: return rawValue
-//        case .other_friend: return rawValue
-//        case .simsim: return rawValue
-            
         default: return rawValue
         }
     }
