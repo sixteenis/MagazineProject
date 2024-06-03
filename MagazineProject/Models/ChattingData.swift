@@ -64,7 +64,7 @@ struct Chat {
         myFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         let stringDate = myFormatter.date(from: self.date)
         let stringFormatter = DateFormatter()
-        stringFormatter.dateFormat = "dd"
+        stringFormatter.dateFormat = "yyyyMMdd"
         let dateString = stringFormatter.string(from: stringDate!)
         
         return Int(dateString)!
@@ -89,7 +89,7 @@ class MockChatList{
                          date: "2024-06-12 22:38",
                          message: "화이팅!!"),
                     Chat(user: .den,
-                         date: "2024-06-12 23:42",
+                         date: "2024-06-03 23:42",
                          message: "열심히 하고 있습니다!!"),
                  ]
                 ),

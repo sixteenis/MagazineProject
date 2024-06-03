@@ -21,7 +21,13 @@ class ChattingRoomViewController: UIViewController {
     var chattingId = 0
     let placeholder = "메시지를 입력하세요"
     var isShowingKeybord = false
-    
+    var today: Int {
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyyMMdd"
+        let result = format.string(from: date)
+        return Int(result)!
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
@@ -55,10 +61,8 @@ class ChattingRoomViewController: UIViewController {
         
         let meXib = UINib(nibName: MeChattingRoomTableViewCell.identifier, bundle: nil)
         let othersXib = UINib(nibName: OthersChattingRoomTableViewCell.identifier, bundle: nil)
-        let dateXib = UINib(nibName: DateTableViewCell.identifier, bundle: nil)
         chattingTableView.register(meXib, forCellReuseIdentifier: MeChattingRoomTableViewCell.identifier)
         chattingTableView.register(othersXib, forCellReuseIdentifier: OthersChattingRoomTableViewCell.identifier)
-        chattingTableView.register(dateXib, forCellReuseIdentifier: DateTableViewCell.identifier)
         
         chattingTableView.estimatedRowHeight = 120.0
         chattingTableView.rowHeight = UITableView.automaticDimension
@@ -142,20 +146,22 @@ extension ChattingRoomViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = MockChatList.mockChatList[chattingId].chatList[indexPath.row]
-        var compareDate: Int
+        var compareDate: Int = 0
+        var yesterdayBool = false
         if indexPath.row != 0{
             compareDate = data.compareDate - MockChatList.mockChatList[chattingId].chatList[indexPath.row-1].compareDate//4 - 3
-        }else{
-            compareDate = 0
+            if MockChatList.mockChatList[chattingId].chatList[indexPath.row-1].compareDate == today - 1{
+                yesterdayBool = true
+            }
         }
         if data.user == .user {
             let cell = tableView.dequeueReusableCell(withIdentifier: MeChattingRoomTableViewCell.identifier) as! MeChattingRoomTableViewCell
-            cell.setUpCellData(data: data, compareDate: compareDate)
+            cell.setUpCellData(data: data, compareDate: compareDate, yesterday: yesterdayBool)
             
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: OthersChattingRoomTableViewCell.identifier) as! OthersChattingRoomTableViewCell
-            cell.setUpCellData(data: data, compareDate: compareDate)
+            cell.setUpCellData(data: data, compareDate: compareDate, yesterday: yesterdayBool)
             
             return cell
         }

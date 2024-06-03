@@ -46,18 +46,19 @@ class MeChattingRoomTableViewCell: UITableViewCell {
         
     }
     
-    func setUpCellData(data: Chat, compareDate: Int) {
+    func setUpCellData(data: Chat, compareDate: Int, yesterday: Bool) {
         chattingLabel.text = data.message
         
         dateLabel.text = data.chattingDate
         
         if compareDate == 0 {
             compareDateLabel.isHidden = true
-        }else if compareDate == 1{
-            compareDateLabel.text = "어제"
-            compareDateLabel.isHidden = false
         }else{
-            compareDateLabel.text = data.homedate
+            if yesterday{
+                compareDateLabel.text = "어제"
+            }else{
+                compareDateLabel.text = data.homedate
+            }
             compareDateLabel.isHidden = false
         }
     }

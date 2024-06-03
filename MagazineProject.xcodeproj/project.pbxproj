@@ -21,8 +21,6 @@
 		0649223C2C09BB1F007E663C /* ManyChattingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0649223A2C09BB1F007E663C /* ManyChattingTableViewCell.xib */; };
 		064922412C0A0055007E663C /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064922402C0A0055007E663C /* String+.swift */; };
 		064922432C0B09E1007E663C /* ChattingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064922422C0B09E1007E663C /* ChattingRoomViewController.swift */; };
-		06561F2C2C0E134D0075AF11 /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06561F2B2C0E134D0075AF11 /* DateTableViewCell.xib */; };
-		06561F2D2C0E134D0075AF11 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06561F2A2C0E134D0075AF11 /* DateTableViewCell.swift */; };
 		065A52DD2C00A3310002EB7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52DC2C00A3310002EB7E /* AppDelegate.swift */; };
 		065A52DF2C00A3310002EB7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A52DE2C00A3310002EB7E /* SceneDelegate.swift */; };
 		065A52E42C00A3310002EB7E /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 065A52E32C00A3310002EB7E /* Base */; };
@@ -64,8 +62,6 @@
 		0649223A2C09BB1F007E663C /* ManyChattingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManyChattingTableViewCell.xib; sourceTree = "<group>"; };
 		064922402C0A0055007E663C /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		064922422C0B09E1007E663C /* ChattingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomViewController.swift; sourceTree = "<group>"; };
-		06561F2A2C0E134D0075AF11 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
-		06561F2B2C0E134D0075AF11 /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
 		065A52D92C00A3310002EB7E /* MagazineProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagazineProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		065A52DC2C00A3310002EB7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065A52DE2C00A3310002EB7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,8 +155,6 @@
 				0699180C2C0C60C700C62DCA /* OthersChattingRoomTableViewCell.xib */,
 				0699180F2C0C60D900C62DCA /* MeChattingRoomTableViewCell.swift */,
 				069918102C0C60D900C62DCA /* MeChattingRoomTableViewCell.xib */,
-				06561F2A2C0E134D0075AF11 /* DateTableViewCell.swift */,
-				06561F2B2C0E134D0075AF11 /* DateTableViewCell.xib */,
 			);
 			path = Chatting;
 			sourceTree = "<group>";
@@ -312,7 +306,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06561F2C2C0E134D0075AF11 /* DateTableViewCell.xib in Resources */,
 				069918112C0C60D900C62DCA /* MeChattingRoomTableViewCell.xib in Resources */,
 				0649223C2C09BB1F007E663C /* ManyChattingTableViewCell.xib in Resources */,
 				0699180D2C0C60C700C62DCA /* OthersChattingRoomTableViewCell.xib in Resources */,
@@ -340,7 +333,6 @@
 				065A52F62C036E990002EB7E /* MagazineTableViewController.swift in Sources */,
 				065A52F82C036EB80002EB7E /* MagazineTableViewCell.swift in Sources */,
 				065A52FC2C0387470002EB7E /* Restaurant.swift in Sources */,
-				06561F2D2C0E134D0075AF11 /* DateTableViewCell.swift in Sources */,
 				066EB30C2C04628F0039F959 /* TravelModel.swift in Sources */,
 				066EB30F2C0464300039F959 /* TravelViewController.swift in Sources */,
 				064922432C0B09E1007E663C /* ChattingRoomViewController.swift in Sources */,

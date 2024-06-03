@@ -57,7 +57,7 @@ class OthersChattingRoomTableViewCell: UITableViewCell {
         compareDateLabel.font = .systemFont(ofSize: 14)
     }
     
-    func setUpCellData(data: Chat, compareDate: Int) {
+    func setUpCellData(data: Chat, compareDate: Int, yesterday: Bool) {
         profileImage.image = UIImage(named: data.user.profileImage)
         
         nameLabel.text = data.user.profileImage
@@ -68,15 +68,13 @@ class OthersChattingRoomTableViewCell: UITableViewCell {
         
         if compareDate == 0 {
             compareDateLabel.isHidden = true
-            compareDateStack.isHidden = true
-        }else if compareDate == 1{
-            compareDateLabel.text = "어제"
-            compareDateLabel.isHidden = false
-            compareDateStack.isHidden = false
         }else{
-            compareDateLabel.text = data.homedate
+            if yesterday{
+                compareDateLabel.text = "어제"
+            }else{
+                compareDateLabel.text = data.homedate
+            }
             compareDateLabel.isHidden = false
-            compareDateStack.isHidden = false
         }
     }
     
