@@ -24,6 +24,17 @@ class ChattingRoomViewController: UIViewController {
         setUpChattingView()
         keyboardhidding()
     }
+    override func viewDidLayoutSubviews() {
+            super.viewDidLayoutSubviews()
+            scrollToBottom()
+        }
+    func scrollToBottom() {
+           let lastRow = chattingTableView.numberOfRows(inSection: 0) - 1
+           if lastRow >= 0 {
+               let indexPath = IndexPath(row: lastRow, section: 0)
+               chattingTableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+           }
+       }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -52,7 +63,10 @@ class ChattingRoomViewController: UIViewController {
         navigationItem.title = MockChatList.mockChatList[chattingId].chatroomName
         let item = UIBarButtonItem(image: UIImage(systemName: "lessthan"),style: .plain,  target: self, action: #selector(backButtonTapped))
         navigationItem.leftBarButtonItem = item
-
+        
+//        let lastRow = self.tableView.numberOfRows(inSection: 0) - 1
+//        let indexPath = IndexPath(row: lastRow, section: 0)
+//        self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
         //chattingTableView.rowHeight = 120
         
     }
@@ -137,6 +151,7 @@ extension ChattingRoomViewController: UITableViewDataSource{
         }
         
     }
+    
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //            
 //            return UITableView.automaticDimension
