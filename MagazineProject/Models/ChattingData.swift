@@ -17,15 +17,15 @@ enum User: String {
     
     var profileImage: String {
         switch self {
-        case .hue: return rawValue
-        case .jack: return rawValue
-        case .bran: return rawValue
-        case .den: return rawValue
-        case .user: return rawValue
-        case .other_friend: return rawValue
-        case .simsim: return rawValue
+//        case .hue: return rawValue
+//        case .jack: return rawValue
+//        case .bran: return rawValue
+//        case .den: return rawValue
+//        case .user: return rawValue
+//        case .other_friend: return rawValue
+//        case .simsim: return rawValue
             
-        //default: return rawValue
+        default: return rawValue
         }
     }
 }
@@ -43,9 +43,30 @@ struct Chat {
     let user: User
     let date: String
     let message: String
-//    var homedate: String {
-//        self.date.filter{}
-//    }
+    var homedate: String {
+        let myFormatter = DateFormatter()
+        myFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let stringDate = myFormatter.date(from: self.date)
+        let stringFormatter = DateFormatter()
+        stringFormatter.dateFormat = "yy.MM.dd"
+        let dateString = stringFormatter.string(from: stringDate!)
+        
+        return dateString
+    }
+    var chattingDate:String {
+        let myFormatter = DateFormatter()
+        myFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let stringDate = myFormatter.date(from: self.date)
+        let stringFormatter = DateFormatter()
+        stringFormatter.amSymbol = "오전"
+        stringFormatter.pmSymbol = "오후"
+        stringFormatter.dateFormat = "hh:mm a"
+        stringFormatter.locale = Locale(identifier: "ko_KR")
+        let dateString = stringFormatter.string(from: stringDate!)
+        print(dateString)
+        return dateString
+        
+    }
 
 }
 

@@ -42,7 +42,7 @@ class MeChattingRoomTableViewCell: UITableViewCell {
     func setUpCellData(data: Chat) {
         chattingLabel.text = data.message
         
-        dateLabel.text = data.date
+        dateLabel.text = data.chattingDate
     }
     
 }

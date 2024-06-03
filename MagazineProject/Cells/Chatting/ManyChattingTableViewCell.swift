@@ -53,7 +53,7 @@ class ManyChattingTableViewCell: UITableViewCell {
         
         profileTextLabel.text = data.chatList.last!.message
         
-        profileDateLabel.text = data.chatList.last?.date
+        profileDateLabel.text = data.chatList.last?.homedate
     
         
     }

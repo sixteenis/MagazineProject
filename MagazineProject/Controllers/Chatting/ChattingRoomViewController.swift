@@ -28,6 +28,12 @@ class ChattingRoomViewController: UIViewController {
         setUpTableView()
         setUpChattingView()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        chattingTextField.text = placeholder
+        chattingTextField.textColor = .lightGray
+        chattingTableView.reloadData()
+    }
     func setUpTableView(){
         chattingTableView.delegate = self
         chattingTableView.dataSource = self
@@ -48,7 +54,8 @@ class ChattingRoomViewController: UIViewController {
     }
     
     func setUpChattingView() {
-        chattingTextField.text = ""
+        chattingTextField.text = placeholder
+        chattingTextField.textColor = .lightGray
         chattingTextField.delegate = self
         
         chattingButton.setTitle("", for: .normal)
@@ -56,17 +63,17 @@ class ChattingRoomViewController: UIViewController {
         chattingButton.addTarget(self, action: #selector(chattingButtonTapped), for: .touchUpInside)
     }
     @objc func chattingButtonTapped() {
-//        for i in 0...MockChatList.mockChatList.count{
-//            if model!.chatroomId == MockChatList.mockChatList[i].chatroomId{
-//                MockChatList.mockChatList[i].chatList.append(Chat(user: .user, date: "123-123", message: chattingTextField.text))
-//                print(model!.chatroomId)
-//                print(MockChatList.mockChatList[i].chatroomId)
-//                break
-//            }
-//        }
-        MockChatList.mockChatList[chattingId].chatList.append(Chat(user: .user, date: "1111", message: chattingTextField.text))
-        chattingTextField.text = placeholder
-        chattingTableView.reloadData()
+        //"2024-06-12 21:30"
+        let date = Date()
+        let myFormatter = DateFormatter()
+        myFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let dateString = myFormatter.string(from: date)
+        
+        MockChatList.mockChatList[chattingId].chatList.append(Chat(user: .user, date: dateString, message: chattingTextField.text))
+        if !chattingTextField.text.isEmpty{
+            chattingTextField.text = ""
+            chattingTableView.reloadData()
+        }
         
     }
     
@@ -113,22 +120,22 @@ extension ChattingRoomViewController: UITextViewDelegate{
     }
     //편집 시작, 커서 시작
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView == chattingTextField {
-            if textView.textColor == UIColor.lightGray{
-                textView.text = nil
-                textView.textColor = .black
-            }
+        
+        if textView.textColor == UIColor.lightGray{
+            textView.text = nil
+            textView.textColor = .black
         }
+        
         print("시작")
     }
     //편집 끝, 커서 안보임
-    func textViewDidEndEditing(_ textView: UITextView) {
-        print("종료")
-        if textView == chattingTextField {
-            if textView.text.isEmpty{
-                textView.text = placeholder
-                textView.textColor = .lightGray
-            }
-        }
-    }
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        print("종료")
+//        if textView == chattingTextField {
+//            if textView.text.isEmpty{
+//                textView.text = placeholder
+//                textView.textColor = .lightGray
+//            }
+//        }
+//    }
 }

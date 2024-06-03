@@ -59,7 +59,7 @@ class OthersChattingRoomTableViewCell: UITableViewCell {
         
         chattingLabel.text = data.message
         
-        dateLabel.text = data.date
+        dateLabel.text = data.chattingDate
     }
     
 }
