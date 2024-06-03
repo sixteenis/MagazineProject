@@ -59,6 +59,17 @@ struct Chat {
         return dateString
         
     }
+    var compareDate: Int {
+        let myFormatter = DateFormatter()
+        myFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        let stringDate = myFormatter.date(from: self.date)
+        let stringFormatter = DateFormatter()
+        stringFormatter.dateFormat = "dd"
+        let dateString = stringFormatter.string(from: stringDate!)
+        
+        return Int(dateString)!
+        
+    }
 
 }
 

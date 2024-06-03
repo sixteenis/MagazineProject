@@ -708,25 +708,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JH9-bO-pwb">
-                                <rect key="frame" x="0.0" y="59" width="393" height="719"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="716.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcQ-3j-sox">
-                                <rect key="frame" x="16" y="778" width="361" height="40"/>
+                                <rect key="frame" x="16" y="775.33333333333337" width="361" height="42.666666666666629"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oU3-ZI-wYX">
-                                        <rect key="frame" x="6" y="7.6666666666666288" width="318" height="25"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et " textAlignment="natural" id="oU3-ZI-wYX">
+                                        <rect key="frame" x="6" y="8.0000000000000018" width="318" height="26.666666666666671"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="Hhj-1T-gUt"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="75" id="Eim-jR-90I"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRZ-et-WC2">
-                                        <rect key="frame" x="330" y="7.6666666666666288" width="25" height="25"/>
+                                        <rect key="frame" x="330" y="9" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="HtE-4W-j9c"/>
                                             <constraint firstAttribute="height" constant="25" id="LOf-1i-2BR"/>
@@ -737,12 +737,13 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="oU3-ZI-wYX" firstAttribute="top" secondItem="tcQ-3j-sox" secondAttribute="top" constant="8" id="4Kf-iY-rIw"/>
                                     <constraint firstAttribute="trailing" secondItem="JRZ-et-WC2" secondAttribute="trailing" constant="6" id="4n1-2N-SVg"/>
                                     <constraint firstItem="JRZ-et-WC2" firstAttribute="centerY" secondItem="tcQ-3j-sox" secondAttribute="centerY" id="Xtx-rF-1y5"/>
-                                    <constraint firstAttribute="height" constant="40" id="hSV-vD-gBn"/>
+                                    <constraint firstAttribute="height" secondItem="oU3-ZI-wYX" secondAttribute="height" multiplier="1.6" id="fuG-0X-aHd"/>
                                     <constraint firstItem="JRZ-et-WC2" firstAttribute="leading" secondItem="oU3-ZI-wYX" secondAttribute="trailing" constant="6" id="lJf-xB-bLn"/>
                                     <constraint firstItem="oU3-ZI-wYX" firstAttribute="leading" secondItem="tcQ-3j-sox" secondAttribute="leading" constant="6" id="myk-WD-W3A"/>
-                                    <constraint firstItem="oU3-ZI-wYX" firstAttribute="centerY" secondItem="tcQ-3j-sox" secondAttribute="centerY" id="yQj-EL-Efu"/>
+                                    <constraint firstAttribute="bottom" secondItem="oU3-ZI-wYX" secondAttribute="bottom" constant="8" id="paX-oA-3XX"/>
                                 </constraints>
                             </view>
                         </subviews>

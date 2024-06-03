@@ -16,7 +16,9 @@ class OthersChattingRoomTableViewCell: UITableViewCell {
     
     @IBOutlet var chattingView: UIView!
     
+    @IBOutlet var compareDateLabel: UILabel!
     
+    @IBOutlet var compareDateStack: UIStackView!
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCell()
@@ -50,9 +52,12 @@ class OthersChattingRoomTableViewCell: UITableViewCell {
         dateLabel.textColor = .lightGray
         dateLabel.numberOfLines = 1
         dateLabel.textAlignment = .left
+        
+        compareDateLabel.textAlignment = .center
+        compareDateLabel.font = .systemFont(ofSize: 14)
     }
     
-    func setUpCellData(data: Chat) {
+    func setUpCellData(data: Chat, compareDate: Int) {
         profileImage.image = UIImage(named: data.user.profileImage)
         
         nameLabel.text = data.user.profileImage
@@ -60,6 +65,19 @@ class OthersChattingRoomTableViewCell: UITableViewCell {
         chattingLabel.text = data.message
         
         dateLabel.text = data.chattingDate
+        
+        if compareDate == 0 {
+            compareDateLabel.isHidden = true
+            compareDateStack.isHidden = true
+        }else if compareDate == 1{
+            compareDateLabel.text = "어제"
+            compareDateLabel.isHidden = false
+            compareDateStack.isHidden = false
+        }else{
+            compareDateLabel.text = data.homedate
+            compareDateLabel.isHidden = false
+            compareDateStack.isHidden = false
+        }
     }
     
 }

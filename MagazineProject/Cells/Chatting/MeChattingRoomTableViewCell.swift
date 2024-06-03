@@ -12,6 +12,10 @@ class MeChattingRoomTableViewCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel!
     
     @IBOutlet var chattingView: UIView!
+    
+    
+    @IBOutlet var compareDateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setUpCell()
@@ -37,12 +41,25 @@ class MeChattingRoomTableViewCell: UITableViewCell {
         chattingView.layer.borderColor = UIColor.lightGray.cgColor
         chattingView.layer.borderWidth = 1
         
+        compareDateLabel.textAlignment = .center
+        compareDateLabel.font = .systemFont(ofSize: 14)
+        
     }
     
-    func setUpCellData(data: Chat) {
+    func setUpCellData(data: Chat, compareDate: Int) {
         chattingLabel.text = data.message
         
         dateLabel.text = data.chattingDate
+        
+        if compareDate == 0 {
+            compareDateLabel.isHidden = true
+        }else if compareDate == 1{
+            compareDateLabel.text = "어제"
+            compareDateLabel.isHidden = false
+        }else{
+            compareDateLabel.text = data.homedate
+            compareDateLabel.isHidden = false
+        }
     }
     
 }

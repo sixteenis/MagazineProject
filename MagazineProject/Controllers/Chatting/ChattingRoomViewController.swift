@@ -7,6 +7,10 @@
 
 import UIKit
 
+// TODO: 날짜가 달라졌을 때, 날짜 구분선 넣기
+// TODO: 텍스트뷰 세줄까지 늘려보기
+
+
 class ChattingRoomViewController: UIViewController {
     @IBOutlet var chattingTableView: UITableView!
     
@@ -51,8 +55,10 @@ class ChattingRoomViewController: UIViewController {
         
         let meXib = UINib(nibName: MeChattingRoomTableViewCell.identifier, bundle: nil)
         let othersXib = UINib(nibName: OthersChattingRoomTableViewCell.identifier, bundle: nil)
+        let dateXib = UINib(nibName: DateTableViewCell.identifier, bundle: nil)
         chattingTableView.register(meXib, forCellReuseIdentifier: MeChattingRoomTableViewCell.identifier)
         chattingTableView.register(othersXib, forCellReuseIdentifier: OthersChattingRoomTableViewCell.identifier)
+        chattingTableView.register(dateXib, forCellReuseIdentifier: DateTableViewCell.identifier)
         
         chattingTableView.estimatedRowHeight = 120.0
         chattingTableView.rowHeight = UITableView.automaticDimension
@@ -136,15 +142,20 @@ extension ChattingRoomViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = MockChatList.mockChatList[chattingId].chatList[indexPath.row]
-        //guard let data = chatModel.chatList[indexPath.row] else {return UITableViewCell()}
+        var compareDate: Int
+        if indexPath.row != 0{
+            compareDate = data.compareDate - MockChatList.mockChatList[chattingId].chatList[indexPath.row-1].compareDate//4 - 3
+        }else{
+            compareDate = 0
+        }
         if data.user == .user {
             let cell = tableView.dequeueReusableCell(withIdentifier: MeChattingRoomTableViewCell.identifier) as! MeChattingRoomTableViewCell
-            cell.setUpCellData(data: data)
+            cell.setUpCellData(data: data, compareDate: compareDate)
             
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: OthersChattingRoomTableViewCell.identifier) as! OthersChattingRoomTableViewCell
-            cell.setUpCellData(data: data)
+            cell.setUpCellData(data: data, compareDate: compareDate)
             
             return cell
         }
