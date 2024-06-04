@@ -103,16 +103,18 @@ class ChattingRoomViewController: UIViewController {
     }
     @objc func chattingButtonTapped() {
         //"2024-06-12 21:30"
-        let date = Date()
-        let myFormatter = DateFormatter()
-        myFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        let dateString = myFormatter.string(from: date)
-        
-        MockChatList.mockChatList[chattingId].chatList.append(Chat(user: .user, date: dateString, message: chattingTextField.text))
         if !chattingTextField.text.isEmpty{
+            let date = Date()
+            let myFormatter = DateFormatter()
+            myFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+            let dateString = myFormatter.string(from: date)
+            
+            MockChatList.mockChatList[chattingId].chatList.append(Chat(user: .user, date: dateString, message: chattingTextField.text))
+            
             chattingTextField.text = ""
             chattingTableView.reloadData()
         }
+        
         
     }
 
