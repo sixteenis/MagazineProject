@@ -70,7 +70,7 @@ class OthersChattingRoomTableViewCell: UITableViewCell {
             compareDateLabel.isHidden = true
         }else{
             if yesterday{
-                compareDateLabel.text = "어제"
+                compareDateLabel.text = "오늘"
             }else{
                 compareDateLabel.text = data.homedate
             }
