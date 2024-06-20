@@ -117,6 +117,7 @@ extension MapViewController {
                 print("이 권한에서만 권한 문구를 띄울 수 있음")
                 locationManager.desiredAccuracy = kCLLocationAccuracyBest
                 locationManager.requestWhenInUseAuthorization()
+                setupAnnotation()
                 
             case .denied:
                 showLocationSettingAlert()
@@ -138,7 +139,9 @@ extension MapViewController {
                     UIApplication.shared.open(setting)
                 }
             }
-            let cancel = UIAlertAction(title: "취소", style: .cancel)
+            let cancel = UIAlertAction(title: "취소", style: .cancel) { _ in
+                self.setupAnnotation()
+            }
             alert.addAction(goSetting)
             alert.addAction(cancel)
             present(alert, animated: true)
